@@ -1,0 +1,36 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 16px;
+  justify-content: center;
+}
+
+mat-card {
+  max-width: 100px;
+}
+
+img {
+  width: 100%;
+}
+
+.font-12-500{
+  font-size:12px;
+  font-weight:500;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.a-link{
+  color:pink;
+  text-decoration:none
+}
+
+.in-progress{
+  display: flex;
+  justify-content: center;
+  height: 10em;
+  margin: 100px 0px;
+}
