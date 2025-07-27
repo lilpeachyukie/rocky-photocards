@@ -1,19 +1,19 @@
-<mat-toolbar color="primary" class="space-between">
+<div color="primary" class="header">
   <div> {{ title }} </div>
-  <div class="font-12-500"> 
+  <div class="font-12 m-t-10"> 
     <span>Last Update {{update}}</span>
     <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
   </div>
 
-</mat-toolbar>
+</div>
 
 <mat-tab-group>
   <mat-tab label="Album Photocard">
     <div class="gallery">
       <mat-card *ngFor="let photo of albumPC_">
-        <mat-card-content>
+        <mat-card-content class="d-grid">
           <img [src]="'assets/images/album-pc/' + photo.filename" alt="{{ photo.caption }}">
-          <span class="font-12-500">{{ photo.caption }}</span>
+          <span class="title-photo">{{ photo.caption }}</span>
         </mat-card-content>
       </mat-card>
     </div>
@@ -21,9 +21,9 @@
   <mat-tab label="Non-Album Photocard">
     <div class="gallery">
       <mat-card *ngFor="let photo of nonAlbumPC_">
-        <mat-card-content>
+        <mat-card-content class="d-grid">
           <img [src]="'assets/images/non-album-pc/' + photo.filename" alt="{{ photo.caption }}">
-          <span class="font-12-500">{{ photo.caption }}</span>
+          <div class="title-photo">{{ photo.caption }}</div>
         </mat-card-content>
       </mat-card>
     </div>
