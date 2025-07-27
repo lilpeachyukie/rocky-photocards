@@ -1,0 +1,38 @@
+<mat-toolbar color="primary" class="space-between">
+  <div> {{ title }} </div>
+  <div class="font-12-500"> 
+    <span>Last Update {{update}}</span>
+    <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
+  </div>
+
+</mat-toolbar>
+
+<mat-tab-group>
+  <mat-tab label="Album Photocard">
+    <div class="gallery">
+      <mat-card *ngFor="let photo of albumPC_">
+        <mat-card-content>
+          <img [src]="'assets/images/album-pc/' + photo.filename" alt="{{ photo.caption }}">
+          <span class="font-12-500">{{ photo.caption }}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="Non-Album Photocard">
+    <div class="gallery">
+      <mat-card *ngFor="let photo of nonAlbumPC_">
+        <mat-card-content>
+          <img [src]="'assets/images/non-album-pc/' + photo.filename" alt="{{ photo.caption }}">
+          <span class="font-12-500">{{ photo.caption }}</span>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="ROCKYST Event photocard" >
+    <div class="in-progress">..In progress..</div>
+  </mat-tab>
+  <mat-tab label="BLANK Event photocard" >
+    <div class="in-progress">..In progress..</div>
+  </mat-tab>
+</mat-tab-group>
+
