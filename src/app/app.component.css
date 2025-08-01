@@ -1,0 +1,168 @@
+.header{
+  color: white;
+  height: 100px;
+  display: block;
+  padding: 15px 20px;
+  font-size: 25px;
+  text-align: center;
+  background:black;
+}
+
+.logo{
+  width: 195px;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 20px 5px;
+  justify-content: center;
+
+  img {
+    width: 100%;
+  }
+}
+
+mat-card {
+  max-width: 50px;
+}
+
+.mat-card{
+  padding: 5px;
+  box-shadow: 0px 0px 0px 0px;
+  border: solid 1px #80808040;
+}
+
+.title-photo{
+  font-size:5px;
+  font-weight:500;
+  line-height: normal;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.font-12{
+  font-size:12px;
+}
+
+.m-t-10{
+  margin-top:10px;
+}
+
+.d-grid{
+  display:grid;
+}
+
+.a-link{
+  color:#ffd0a6;
+  text-decoration:none
+}
+
+.in-progress{
+  display: flex;
+  justify-content: center;
+  height: 10em;
+  margin: 100px 0px;
+}
+
+.download-btn {
+  background: black;
+  width: 95%;
+  color: white;
+  margin: 20px auto;
+  display: block;
+  bottom: 1em;
+}
+
+.spacing-2{
+  letter-spacing: 2px;
+}
+
+.sub-header{
+  margin-top: 20px;
+  background: rgb(126 33 42);
+  color: white;
+  padding: 10px;
+  
+}
+
+.select-photocard-astro{
+  width: 100%;
+  margin-bottom: -30px;
+}
+.loader{
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255,255,255,0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #555;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (min-width: 768px) {
+  mat-card {
+    max-width: 70px;
+  }
+}
+
+/* For desktops and above */
+@media (min-width: 1024px) {
+
+  .header{
+    color: white;
+    height: 115px;
+    display: block;
+    padding: 15px 20px;
+    font-size: 25px;
+    text-align: center;
+    background:black;
+  }
+
+  mat-card {
+    max-width: 100px;
+  }
+
+  .title-photo{
+    font-size:12px;
+    font-weight:500;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 5px;
+    justify-content: center;
+  }
+
+  .logo{
+    width:245px;
+  }
+
+  .download-btn {
+    background: black;
+    width: 99%;
+    color: white;
+    margin: 20px auto;
+    display: block;
+    bottom: 1em;
+  }
+}
