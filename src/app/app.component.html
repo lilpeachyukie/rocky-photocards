@@ -1,0 +1,173 @@
+
+<div id="rocky-photocards">
+  <div color="primary" class="header m-b-10">
+    <img [src]="'assets/logo.png'" class="logo">
+    <div class="font-12 spacing-2"> 
+      <span>Last Update {{update}}</span>
+      <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
+    </div>
+  </div>
+  <mat-tab-group (selectedIndexChange)="onTabChange($event)">
+    <mat-tab label="Album">
+      <div class="gallery">
+        <mat-card *ngFor="let photo of albumPC_">
+          <mat-card-content class="d-grid">
+            <img [src]="'assets/images/album-pc/' + photo.filename" alt="{{ photo.caption }}">
+            <span class="title-photo">{{ photo.caption }}</span>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="Non-Album">
+      <div class="gallery">
+        <mat-card *ngFor="let photo of nonAlbumPC_">
+          <mat-card-content class="d-grid">
+            <img [src]="photo?.nophoto ? 'assets/images/nophoto.png' : 'assets/images/non-album-pc/' + photo.filename" alt="{{ photo.caption }}">
+            <div class="title-photo">{{ photo.caption }}</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="ROCKYST Non-album" >
+      <div class="gallery">
+        <mat-card *ngFor="let photo of rockystPC_">
+          <mat-card-content class="d-grid">
+            <img [src]="'assets/images/rockyst-pc/' + photo.filename" alt="{{ photo.caption }}">
+            <div class="title-photo">{{ photo.caption }}</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="BLANK Non-Album" >
+      <div class="gallery">
+        <mat-card *ngFor="let photo of blankPC_">
+          <mat-card-content class="d-grid">
+            <img [src]="'assets/images/blank-pc/' + photo.filename" alt="{{ photo.caption }}">
+            <div class="title-photo">{{ photo.caption }}</div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+    <mat-tab label="ASTRO" >
+      <div style="padding:10px 10px 0px">
+        <mat-form-field appearance="outline" class="select-photocard-astro">
+          <mat-label>Photocard</mat-label>
+          <mat-select [(value)]="selectedAstroPC" (selectionChange)="onChangeDislay($event.value)" multiple>
+            <mat-option *ngFor="let pc of astroPC" [value]="pc.val" >{{pc.name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        
+      </div>
+      <div *ngIf="showAstroAlbumPC">
+        <div align="center" class="sub-header"> ALBUM PHOTOCARD </div>
+          <div class="gallery">
+            <mat-card *ngFor="let photo of astroAlbumPC_">
+              <mat-card-content class="d-grid">
+                <img [src]="'assets/images/astro-album-pc/' + photo.filename" alt="{{ photo.caption }}">
+                <div class="title-photo">{{ photo.caption }}</div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+      </div>
+
+      <div *ngIf="showNonAstroAlbumPC">
+        <div align="center" class="sub-header"> NON-ALBUM PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of astroNonAlbumPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-album-benefit-pc/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showArohaPC">
+        <div align="center" class="sub-header"> AROHA GEN KIT PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of arohaPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/aroha/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showSGPC">
+        <div align="center" class="sub-header"> SEASON GREETINGS PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of sgPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/season-greetings/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showAstroadPC">
+        <div align="center" class="sub-header"> ASTROAD PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of astroadPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/astroad/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showAAFPC">
+        <div align="center" class="sub-header"> ASTRO AROHA FESTIVAL PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of aafPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/aaf/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showRorohaPC">
+        <div align="center" class="sub-header"> ROROHA PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of rorohaPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/roroha/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showMagPC">
+        <div align="center" class="sub-header"> MAGAZINE PB PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of magzPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/magazine/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <div *ngIf="showOthersPC">
+        <div align="center" class="sub-header"> OTHERS PHOTOCARD </div>
+        <div class="gallery">
+          <mat-card *ngFor="let photo of othersPC_">
+            <mat-card-content class="d-grid">
+              <img [src]="'assets/images/astro-non-album-pc/others/' + photo.filename" alt="{{ photo.caption }}">
+              <div class="title-photo">{{ photo.caption }}</div>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+    </mat-tab>
+  </mat-tab-group>
+</div>
+<button mat-raised-button (click)="captureAndDownload()" class="download-btn"><mat-icon>file_download</mat-icon> Template</button>
+<div id="loader" class="loader"><div class="spinner"></div> </div>
