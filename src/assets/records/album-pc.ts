@@ -1,0 +1,9 @@
+export var albumPC = [
+	{ caption: 'ROCKYST: Classic', total: 9 },
+	{ caption: 'ROCKYST: Modern', total: 9 },
+	{ caption: 'ROCKYST: Platform - random', total: 9 },
+	{ caption: 'ROCKYST: Platform - set', total: 8 },
+	{ caption: 'ROCKYST: Platform - qr', total: 1 },
+	{ caption: 'BLANK: Burgundy', total: 6 },
+	{ caption: 'BLANK: White', total: 6 },
+];
