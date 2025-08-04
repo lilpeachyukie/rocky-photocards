@@ -11,11 +11,20 @@
 .logo{
   width: 195px;
 }
+
+.refresh-btn{
+  position: absolute;
+  color: white;
+  z-index: 1000000;
+  right: 1em;
+  top: 1em;
+}
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 20px 5px;
+  padding: 20px 5px 50px;
   justify-content: center;
 
   img {
@@ -110,6 +119,32 @@ mat-card {
   animation: spin 1s linear infinite;
 }
 
+.sticky{
+  position: fixed;
+  z-index: 10000;
+  background-color: black;
+  display: flex;
+  color: white;
+  width: 13em;
+  right: 0em;
+  bottom: 0em;
+  height: 3em;
+}
+
+.note{
+  display: flex;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.87);
+  z-index: 10000;
+  width: fit-content;
+  bottom: 4em;
+  right: 0em;
+  padding: 10px;
+  border-radius: 1em;
+  font-size: 12px;
+  color: white;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
@@ -165,4 +200,9 @@ mat-card {
     display: block;
     bottom: 1em;
   }
+
+  .note{
+    width: 30em
+  }
+
 }

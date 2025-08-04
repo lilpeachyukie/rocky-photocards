@@ -1,4 +1,5 @@
 
+
 <div id="rocky-photocards">
   <div color="primary" class="header m-b-10">
     <img [src]="'assets/logo.png'" class="logo">
@@ -169,5 +170,37 @@
     </mat-tab>
   </mat-tab-group>
 </div>
-<button mat-raised-button (click)="captureAndDownload()" class="download-btn"><mat-icon>file_download</mat-icon> Template</button>
+<div class="sticky" #stickyDiv>
+  <button mat-icon-button (click)="captureAndDownload()"><mat-icon>file_download</mat-icon></button>
+  <button mat-icon-button (click)="showNote = !showNote; showToDo = showNote && showToDo ? !showToDo : showToDo"><mat-icon>announcement</mat-icon></button>
+  <button mat-icon-button (click)="showToDo = !showToDo; showNote = showNote && showToDo ? !showNote : showNote"><mat-icon>help</mat-icon></button>
+  <button mat-icon-button (click)="refresh()"><mat-icon>refresh</mat-icon></button>
+</div>
+
+<div *ngIf="showToDo" class="note">
+  This site is maintained by a single creator, @lilpeachyukie. <br>
+  If there any missing photocard or incorrect information, <br>
+  feel free to send a DM on X/IG. <br>
+  Please note that the photocard images do not belong to the creator. 
+  They have been sourced from various platforms and contributors.<br> 
+  <br> 
+  Sharing this site’s link is sincerely appreciated.<br> 
+  Thank you! 💗<br>
+  <br>
+  Before download the template,<br>
+  (Highly recommended)<br>
+  1. Open in desktop (computer/laptop).<br> 
+  2. Adjust screen size according to your preference.<br> 
+  3. Click Download button.
+  <br>
+  or
+  <br>
+  1. Open in mobile, and set to view to the desktop view<br>
+  2. Click Download button
+</div>
+
+<div *ngIf="showNote" class="note">
+<div [innerHTML]="note"></div>
+</div>
+
 <div id="loader" class="loader"><div class="spinner"></div> </div>
