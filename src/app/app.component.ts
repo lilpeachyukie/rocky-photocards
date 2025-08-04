@@ -6,6 +6,7 @@ import { rockystPC } from './../assets/records/rockyst-pc';
 import { blankPC } from './../assets/records/blank-pc';
 import { astroAlbumPC, astroNonAlbumPC } from './../assets/records/astro-album-pc';
 import { arohaPC, sgPC, astroadPC, aafPC, rorohaPC, magzPC, othersPC} from './../assets/records/astro-non-album-pc';
+import { HostListener, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,14 @@ import { arohaPC, sgPC, astroadPC, aafPC, rorohaPC, magzPC, othersPC} from './..
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  update = '250801';
+  update = '250804';
   public template = 'Rocky album photocards';
+  public tabSelected = 0;
+  showToDo = false;
+  showNote = false;
+  note = `250804 <br>
+  Photocards from the LATAM Tour 2025 will be added <br>
+  after the concert concludes due to limited available information.`;
 
   private albumPC = albumPC
   private nonAlbumPC = nonAlbumPC
@@ -59,6 +66,18 @@ export class AppComponent {
   selectedAstroPC: string[] = [
     'showAstroAlbumPC', 'showNonAstroAlbumPC', 'showArohaPC', 'showSGPC', 'showAstroadPC', 'showAAFPC', 'showRorohaPC', 'showMagPC', 'showOthersPC'
   ]
+
+  constructor(private eRef: ElementRef) {}
+
+  @ViewChild('stickyDiv', { static: true }) stickyDiv!: ElementRef;
+  @HostListener('document:click', ['$event'])
+  handleClickOutside(event: MouseEvent) {
+    if (!this.stickyDiv.nativeElement.contains(event.target)) {
+      this.showNote = false;
+      this.showToDo = false;
+    }
+  }
+
   ngOnInit() {
     this.loadPhotoGroup(this.albumPC, 'albumPC')
     this.loadPhotoGroup(this.nonAlbumPC, 'nonAlbumPC')
@@ -187,30 +206,49 @@ export class AppComponent {
   }
 
   public onTabChange(index: number){
+    this.tabSelected = index;
     switch (index) {
       case 0:
         this.template = 'Rocky album photocards'
         break;
       case 1:
-        this.template = 'Rocky non-album photocards';
+        this.template = 'Rocky non-album photocards'
         break;
       case 2:
-        this.template = 'Rockyst event photocards';
+        this.template = 'Rockyst event photocards'
         break;
       case 3:
-        this.template = 'Blank event photocards';
+        this.template = 'Blank event photocards'
         break;
       case 4:
-        this.template = 'ASTRO photocards';
+        this.template = 'ASTRO photocards'
         break;
       default:
-        this.template = 'Rocky album photocards';
+        this.template = 'Rocky album photocards'
     }
   }
 
   onChangeDislay(selected: string[]) {
     this.selectedAstroPC = selected;
+  }
 
+  refresh(){
+    setTimeout(() => this.forceReloadImages(), 100);
+  }
+
+
+
+  forceReloadImages() {
+    const tabContent = document.querySelectorAll('.mat-tab-body-active img');
+    tabContent.forEach((el) => {
+      const img = el as HTMLImageElement; // Cast to HTMLImageElement
+
+      const src = img.getAttribute('src');
+      if (src) {
+        const baseSrc = src.split('?')[0]; // Remove any existing query string
+        img.src = `${baseSrc}?t=${new Date().getTime()}`;
+      }
+    });
   }
 
   get showAstroAlbumPC(): boolean {
