@@ -1423,7 +1423,7 @@ var nonAlbumPC = [
     { caption: 'Stargraphy - Japan: Photopack', total: 1 },
     { caption: 'Stargraphy Exhibition: MD', total: 3 },
     { caption: 'Stargraphy Exhibition: MD Purchased >70k won', total: 1 },
-    { caption: 'K-POP ANDEAN FS - Colombia', total: 1 },
+    { caption: 'Fill In The Blank - Manila', total: 2 },
     { caption: 'Read You Feel You - Bangkok Pt1', total: 2 },
     { caption: 'Read You Feel You - Bangkok Pt2', total: 2 },
     { caption: 'Read You Feel You - Bangkok: Keyring', total: 1, nophoto: true },
@@ -1437,7 +1437,7 @@ var nonAlbumPC = [
     { caption: 'Read You Feel You - Taipei Pt2', total: 2, nophoto: true },
     { caption: 'Read You Feel You - Taipei FS', total: 3, nophoto: true },
     { caption: 'Read You Feel You - Taipei FS Winner', total: 1, nophoto: true },
-    { caption: 'Fill In The Blank - Manila', total: 2 },
+    { caption: 'K-POP ANDEAN FS - Colombia', total: 1 },
 ];
 
 
