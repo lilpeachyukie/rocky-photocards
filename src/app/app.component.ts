@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import html2canvas from 'html2canvas';
-import { albumPC } from './../assets/records/album-pc';
-import { nonAlbumPC } from './../assets/records/non-album-pc';
-import { rockystPC } from './../assets/records/rockyst-pc';
-import { blankPC } from './../assets/records/blank-pc';
 import { astroAlbumPC, astroNonAlbumPC } from './../assets/records/astro-album-pc';
 import { arohaPC, sgPC, astroadPC, aafPC, rorohaPC, magzPC, othersPC} from './../assets/records/astro-non-album-pc';
 import { HostListener, ElementRef, ViewChild } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -14,19 +11,17 @@ import { HostListener, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  update = '250804';
   public template = 'Rocky album photocards';
   public tabSelected = 0;
   showToDo = false;
   showNote = false;
-  note = `250804 <br>
-  Photocards from the LATAM Tour 2025 will be added <br>
-  after the concert concludes due to limited available information.`;
+  update: string = '';
+  note: string = '';
+  intro: string = '';
+  photoSections: any[] = [];
+  hasNoPhotoMap: Record<string, boolean> = {};
+  tabLoadCount: Record<number, number> = {};
 
-  private albumPC = albumPC
-  private nonAlbumPC = nonAlbumPC
-  private rockystPC = rockystPC
-  private blankPC = blankPC
   private astroAlbumPC = astroAlbumPC
   private astroNonAlbumPC = astroNonAlbumPC
   private arohaPC = arohaPC
@@ -51,6 +46,7 @@ export class AppComponent {
   magzPC_: { caption: string, filename: string }[] = [];
   othersPC_: { caption: string, filename: string }[] = [];
 
+
   astroPC = [
     { name: 'Album' , val:'showAstroAlbumPC'}, 
     { name: 'Non-Album' , val:'showNonAstroAlbumPC'}, 
@@ -67,7 +63,7 @@ export class AppComponent {
     'showAstroAlbumPC', 'showNonAstroAlbumPC', 'showArohaPC', 'showSGPC', 'showAstroadPC', 'showAAFPC', 'showRorohaPC', 'showMagPC', 'showOthersPC'
   ]
 
-  constructor(private eRef: ElementRef) {}
+  constructor(private http: HttpClient) {}
 
   @ViewChild('stickyDiv', { static: true }) stickyDiv!: ElementRef;
   @HostListener('document:click', ['$event'])
@@ -79,93 +75,66 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    this.loadPhotoGroup(this.albumPC, 'albumPC')
-    this.loadPhotoGroup(this.nonAlbumPC, 'nonAlbumPC')
-    this.loadPhotoGroup(this.rockystPC, 'rockystPC')
-    this.loadPhotoGroup(this.blankPC, 'blankPC')
-    this.loadPhotoGroup(this.astroAlbumPC, 'astroAlbumPC')
-    this.loadPhotoGroup(this.astroNonAlbumPC, 'astroNonAlbumPC')
-    this.loadPhotoGroup(this.arohaPC, 'arohaPC')
-    this.loadPhotoGroup(this.sgPC, 'sgPC')
-    this.loadPhotoGroup(this.astroadPC, 'astroadPC')
-    this.loadPhotoGroup(this.aafPC, 'aafPC')
-    this.loadPhotoGroup(this.rorohaPC, 'rorohaPC')
-    this.loadPhotoGroup(this.magzPC, 'magzPC')
-    this.loadPhotoGroup(this.othersPC, 'othersPC')
+    this.loadNotice();
+    this.loadPhotoSections();
   }
 
-  public loadPhotoGroup(data_: any, type: string){
-    data_.forEach((group:any, groupIndex:number) => {
-      for (let i = 0; i < group.total; i++) {
-        if(type === 'albumPC'){
-          this.albumPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'nonAlbumPC'){
-          this.nonAlbumPC_.push({
-            caption: group.caption,
-            nophoto: group.nophoto ? true : false,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'rockystPC'){
-          this.rockystPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'blankPC'){
-          this.blankPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'astroAlbumPC'){
-          this.astroAlbumPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'astroNonAlbumPC'){
-          this.astroNonAlbumPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'arohaPC'){
-          this.arohaPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'sgPC'){
-          this.sgPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'astroadPC'){
-          this.astroadPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'aafPC'){
-          this.aafPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'rorohaPC'){
-          this.rorohaPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'magzPC'){
-          this.magzPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
-          });
-        }else if(type === 'othersPC'){
-          this.othersPC_.push({
-            caption: group.caption,
-            filename: `${groupIndex}-${i}.jpg`
+  public loadNotice(){
+    this.http.get<any>('assets/records/notice.json').subscribe(data => {
+      this.update = data.update;
+      this.note = data.note;
+      this.intro = data.intro;
+    });
+  }
+  loadPhotoSections() {
+    this.http.get<any[]>('assets/records/master.json').subscribe(config => {
+      this.photoSections = config;
+      this.photoSections.forEach(section => {
+        if (section.type === 'rocky') {
+          this.hasNoPhotoMap[section.dataProp] = !!section.hasNoPhoto;
+        } else if (section.type === 'astro') {
+          section.subSections.forEach((sub: any)=> {
+            this.hasNoPhotoMap[sub.dataProp] = false;
           });
         }
+      });
+    });
+  }
+
+  loadPhotoGroup(data_: any[], dataProp: any) {
+    data_.forEach((group, gi) => {
+      for (let i = 0; i < group.total; i++) {
+        const photo = {
+          caption: group.caption,
+          filename: `${gi}-${i}.jpg`
+        };
+        (this as any)[dataProp].push(photo);
       }
     });
+  }
+
+  public loadCaption(section: any){
+    this.http.get<any[]>(`assets/records/${section.folder}.json`).subscribe((data) => {
+      this.loadPhotoGroup(data, section.dataProp)
+    });
+  }
+
+  onTabChange(index: number) {
+    this.tabSelected = index;
+    const section = this.photoSections.find(s => s.tabIndex === index);
+    if (!section) return;
+
+    this.template = section.name;
+    this.tabLoadCount[index] = (this.tabLoadCount[index] || 0) + 1;
+    if (this.tabLoadCount[index] > 1) return;
+
+    if (section.type === 'rocky') {
+      this.loadCaption(section);
+    } else if (section.type === 'astro') {
+      section.subSections.forEach((sub: any) =>
+        this.loadPhotoGroup((this as any)[sub.folderRecords], sub.dataProp)
+      );
+    }
   }
 
   public captureAndDownload() {
@@ -178,9 +147,7 @@ export class AppComponent {
       return;
     }
 
-    // Show loader
     if (loader) loader.style.display = 'flex';
-
     if (select) (select as HTMLElement).style.display = 'none';
 
     html2canvas(element).then((canvas: any) => {
@@ -194,38 +161,12 @@ export class AppComponent {
       link.click();
       document.body.removeChild(link);
 
-      // Hide loader
       if (loader) loader.style.display = 'none';
 
     }).catch((err: any) => {
       console.error('Error capturing:', err);
-
-      // Hide loader in case of error
       if (loader) loader.style.display = 'none';
     });
-  }
-
-  public onTabChange(index: number){
-    this.tabSelected = index;
-    switch (index) {
-      case 0:
-        this.template = 'Rocky album photocards'
-        break;
-      case 1:
-        this.template = 'Rocky non-album photocards'
-        break;
-      case 2:
-        this.template = 'Rockyst event photocards'
-        break;
-      case 3:
-        this.template = 'Blank event photocards'
-        break;
-      case 4:
-        this.template = 'ASTRO photocards'
-        break;
-      default:
-        this.template = 'Rocky album photocards'
-    }
   }
 
   onChangeDislay(selected: string[]) {
@@ -236,13 +177,10 @@ export class AppComponent {
     setTimeout(() => this.forceReloadImages(), 100);
   }
 
-
-
   forceReloadImages() {
     const tabContent = document.querySelectorAll('.mat-tab-body-active img');
     tabContent.forEach((el) => {
       const img = el as HTMLImageElement; // Cast to HTMLImageElement
-
       const src = img.getAttribute('src');
       if (src) {
         const baseSrc = src.split('?')[0]; // Remove any existing query string
@@ -251,39 +189,7 @@ export class AppComponent {
     });
   }
 
-  get showAstroAlbumPC(): boolean {
-    return this.selectedAstroPC.includes('showAstroAlbumPC');
-  }
-
-  get showNonAstroAlbumPC(): boolean {
-    return this.selectedAstroPC.includes('showNonAstroAlbumPC');
-  }
-
-  get showArohaPC(): boolean {
-    return this.selectedAstroPC.includes('showArohaPC');
-  }
-
-  get showSGPC(): boolean {
-    return this.selectedAstroPC.includes('showSGPC');
-  }
-
-  get showAstroadPC(): boolean {
-    return this.selectedAstroPC.includes('showAstroadPC');
-  }
-
-  get showAAFPC(): boolean {
-    return this.selectedAstroPC.includes('showAAFPC');
-  }
-
-  get showRorohaPC(): boolean {
-    return this.selectedAstroPC.includes('showRorohaPC');
-  }
-
-  get showMagPC(): boolean {
-    return this.selectedAstroPC.includes('showMagPC');
-  }
-
-  get showOthersPC(): boolean {
-    return this.selectedAstroPC.includes('showOthersPC');
+  getPhotoArray(prop: string) {
+    return (this as any)[prop] || [];
   }
 }
