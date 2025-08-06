@@ -1,0 +1,101 @@
+[
+  {
+    "tabIndex": 0,
+    "name": "Album",
+    "folder": "album-pc",
+    "dataProp": "albumPC_",
+    "type": "rocky"
+  },
+  {
+    "tabIndex": 1,
+    "name": "Non‑Album",
+    "folder": "non-album-pc",
+    "dataProp": "nonAlbumPC_",
+    "type": "rocky",
+    "hasNoPhoto": true
+  },
+  {
+    "tabIndex": 2,
+    "name": "ROCKYST Event",
+    "folder": "rockyst-pc",
+    "dataProp": "rockystPC_",
+    "type": "rocky"
+  },
+  {
+    "tabIndex": 3,
+    "name": "BLANK Event",
+    "folder": "blank-pc",
+    "dataProp": "blankPC_",
+    "type": "rocky"
+  },
+  {
+    "tabIndex": 4,
+    "name": "ASTRO",
+    "type": "astro",
+    "subSections": [
+      {
+        "key": "showAstroAlbumPC",
+        "label": "Album",
+        "folderImage": "astro-album-pc",
+        "folderRecords": "astroAlbumPC",
+        "dataProp": "astroAlbumPC_"
+      },
+      {
+        "key": "showNonAstroAlbumPC",
+        "label": "Non‑Album",
+        "folderImage": "astro-album-benefit-pc",
+        "folderRecords": "astroNonAlbumPC",
+        "dataProp": "astroNonAlbumPC_"
+      },
+      {
+        "key": "showArohaPC",
+        "label": "AROHA Gen Kit",
+        "folderImage": "astro-non-album-pc/aroha",
+        "folderRecords": "arohaPC",
+        "dataProp": "arohaPC_"
+      },
+      {
+        "key": "showSGPC",
+        "label": "Season Greetings",
+        "folderImage": "astro-non-album-pc/season-greetings",
+        "folderRecords": "sgPC",
+        "dataProp": "sgPC_"
+      },
+      {
+        "key": "showAstroadPC",
+        "label": "ASTROAD",
+        "folderImage": "astro-non-album-pc/astroad",
+        "folderRecords": "astroadPC",
+        "dataProp": "astroadPC_"
+      },
+      {
+        "key": "showAAFPC",
+        "label": "AROHA Festival",
+        "folderImage": "astro-non-album-pc/aaf",
+        "folderRecords": "aafPC",
+        "dataProp": "aafPC_"
+      },
+      {
+        "key": "showRorohaPC",
+        "label": "ROROHA",
+        "folderImage": "astro-non-album-pc/roroha",
+        "folderRecords": "rorohaPC",
+        "dataProp": "rorohaPC_"
+      },
+      {
+        "key": "showMagPC",
+        "label": "Magazine PB",
+        "folderImage": "astro-non-album-pc/magazine",
+        "folderRecords": "magzPC",
+        "dataProp": "magzPC_"
+      },
+      {
+        "key": "showOthersPC",
+        "label": "Others",
+        "folderImage": "astro-non-album-pc/others",
+        "folderRecords": "othersPC",
+        "dataProp": "othersPC_"
+      }
+    ]
+  }
+]
