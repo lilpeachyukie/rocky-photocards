@@ -106,7 +106,7 @@ export class AppComponent {
       for (let i = 0; i < group.total; i++) {
         const photo = {
           caption: group.caption,
-          filename: `${gi}-${i}.jpg`
+          filename: group.nophoto ? undefined : `${gi}-${i}.jpg`
         };
         (this as any)[dataProp].push(photo);
       }

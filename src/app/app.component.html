@@ -12,9 +12,8 @@
         <ng-container *ngIf="sec.type === 'rocky'">
           <mat-card *ngFor="let photo of getPhotoArray(sec.dataProp)">
             <mat-card-content class="d-grid">
-              <img [src]="hasNoPhotoMap[sec.dataProp] && photo['nophoto']
-                  ? 'assets/images/nophoto.png'
-                  : 'assets/images/' + sec.folder + '/' + photo.filename"
+              {{photo.nophoto}}
+              <img [src]="hasNoPhotoMap[sec.dataProp] && !photo.filename ? 'assets/images/nophoto.png' : 'assets/images/' + sec.folder + '/' + photo.filename"
                   alt="{{ photo.caption }}">
               <div class="title-photo">{{ photo.caption }}</div>
             </mat-card-content>
