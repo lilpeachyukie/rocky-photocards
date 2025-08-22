@@ -4,6 +4,8 @@ import { astroAlbumPC, astroNonAlbumPC } from './../assets/records/astro-album-p
 import { arohaPC, sgPC, astroadPC, aafPC, rorohaPC, magzPC, othersPC} from './../assets/records/astro-non-album-pc';
 import { HostListener, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { AppService } from './app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -63,7 +65,10 @@ export class AppComponent {
     'showAstroAlbumPC', 'showNonAstroAlbumPC', 'showArohaPC', 'showSGPC', 'showAstroadPC', 'showAAFPC', 'showRorohaPC', 'showMagPC', 'showOthersPC'
   ]
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient, 
+    private router: Router, 
+    private appService: AppService) {}
 
   @ViewChild('stickyDiv', { static: true }) stickyDiv!: ElementRef;
   @HostListener('document:click', ['$event'])
@@ -106,7 +111,8 @@ export class AppComponent {
       for (let i = 0; i < group.total; i++) {
         const photo = {
           caption: group.caption,
-          filename: group.nophoto ? undefined : `${gi}-${i}.jpg`
+          filename: group.nophoto ? undefined : `${gi}-${i}.jpg`,
+          album: group.album
         };
         (this as any)[dataProp].push(photo);
       }
@@ -192,4 +198,53 @@ export class AppComponent {
   getPhotoArray(prop: string) {
     return (this as any)[prop] || [];
   }
+
+  public want: { caption: string, path: string, album: string }[] = [];
+  public customizeTemplate =  false;
+  addWant(caption: string, photo: any, folder: string, album: string ){
+    const path = `assets/images/${folder}/${photo}`;
+    const index = this.want.findIndex(p => p.path === path);
+
+    if (index > -1) {
+      this.want.splice(index, 1);
+    } else {
+      this.want.push({ caption, path, album });
+    }
+  }
+
+  getSelected(folder: string, filename:string)
+  {
+     return this.want.some(p => p.path === 'assets/images/' + folder + '/' + filename)
+  }
+
+  viewWant(){
+    this.appService.setData(this.want);
+    this.customizeTemplate = true;
+    this.template = 'Rocky-photocards'
+  }
+
+  home() {
+    this.customizeTemplate = false;
+  }
+}
+
+@Component({
+  selector: 'app-customize-template',
+  templateUrl: './customize-template.html',
+  styleUrls: ['./app.component.css']
+})
+export class CustomizeTemplate {
+
+  public photos: any;
+
+
+  constructor(private appService: AppService) {}
+  ngOnInit() {
+    this.photos = this.appService.getData();
+  }
+
+  remove(i: number){
+    this.photos.splice(i, 1);
+  }
+
 }

@@ -1,6 +1,6 @@
-<div id="rocky-photocards">
+<div *ngIf="!customizeTemplate" id="rocky-photocards">
   <div color="primary" class="header m-b-10">
-    <img [src]="'assets/logo.png'" class="logo">
+    <img [src]="'assets/_logo_.png'" class="logo">
     <div class="font-12 spacing-2"> 
       <span>Last Update {{update}}</span>
       <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
@@ -10,12 +10,11 @@
     <mat-tab *ngFor="let sec of photoSections" [label]="sec.name">
       <div class="gallery">
         <ng-container *ngIf="sec.type === 'rocky'">
-          <mat-card *ngFor="let photo of getPhotoArray(sec.dataProp)">
-            <mat-card-content class="d-grid">
-              {{photo.nophoto}}
+          <mat-card *ngFor="let photo of getPhotoArray(sec.dataProp)" (click)="addWant(photo.caption, photo.filename, sec.folder, sec.album)" [ngClass]="{ 'selected': getSelected(sec.folder, photo.filename)}" >
+            <mat-card-content class="d-grid" >
               <img [src]="hasNoPhotoMap[sec.dataProp] && !photo.filename ? 'assets/images/nophoto.png' : 'assets/images/' + sec.folder + '/' + photo.filename"
                   alt="{{ photo.caption }}">
-              <div class="title-photo">{{ photo.caption }}</div>
+              <div class="title-photo">{{photo.album}}{{ photo.caption }}</div>
             </mat-card-content>
           </mat-card>
         </ng-container>
@@ -36,9 +35,9 @@
             <div *ngIf="selectedAstroPC.includes(sub.key)">
               <div align="center" class="sub-header">{{ sub.label }}</div>
               <div class="gallery">
-                <mat-card *ngFor="let photo of getPhotoArray(sub.dataProp)">
-                  <mat-card-content class="d-grid">
-                    <img [src]="'assets/images/' + sub.folderImage + '/' + photo.filename"
+                <mat-card *ngFor="let photo of getPhotoArray(sub.dataProp)" (click)="addWant(photo.caption, photo.filename, sub.folderImage, '')" [ngClass]="{ 'selected': getSelected(sub.folderImage, photo.filename)}">
+                  <mat-card-content class="d-grid" >
+                    <img [src]="'assets/images/' + sub.folderImage + '/' + photo.filename" 
                         alt="{{ photo.caption }}">
                     <div class="title-photo">{{ photo.caption }}</div>
                   </mat-card-content>
@@ -51,11 +50,16 @@
     </mat-tab>
   </mat-tab-group>
 </div>
+<div *ngIf="customizeTemplate">
+  <app-customize-template ></app-customize-template>
+</div>
 <div class="sticky" #stickyDiv>
-  <button mat-icon-button (click)="captureAndDownload()"><mat-icon>file_download</mat-icon></button>
-  <button mat-icon-button (click)="showNote = !showNote; showToDo = showNote && showToDo ? !showToDo : showToDo"><mat-icon>announcement</mat-icon></button>
-  <button mat-icon-button (click)="showToDo = !showToDo; showNote = showNote && showToDo ? !showNote : showNote"><mat-icon>help</mat-icon></button>
-  <button mat-icon-button (click)="refresh()"><mat-icon>refresh</mat-icon></button>
+  <button mat-icon-button (click)="home()" matTooltip="Template"><mat-icon>photo_library</mat-icon></button>
+  <button mat-icon-button (click)="viewWant()" matTooltip="Selected photocard"><mat-icon>playlist_add_check	</mat-icon></button>
+  <button mat-icon-button (click)="captureAndDownload()" matTooltip="Download"><mat-icon>file_download</mat-icon></button>
+  <button mat-icon-button (click)="showNote = !showNote; showToDo = showNote && showToDo ? !showToDo : showToDo" matTooltip="Notice"><mat-icon>announcement</mat-icon></button>
+  <button mat-icon-button (click)="showToDo = !showToDo; showNote = showNote && showToDo ? !showNote : showNote" matTooltip="What To Do"><mat-icon>help</mat-icon></button>
+  <button mat-icon-button (click)="refresh()" matTooltip="Refresh"><mat-icon>refresh</mat-icon></button>
 </div>
 <div *ngIf="showToDo" class="note" [innerHTML]="intro"></div>
 <div *ngIf="showNote" class="note" [innerHTML]="note"></div>
