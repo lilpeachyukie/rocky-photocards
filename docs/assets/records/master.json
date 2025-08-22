@@ -19,14 +19,17 @@
     "name": "ROCKYST Event",
     "folder": "rockyst-pc",
     "dataProp": "rockystPC_",
-    "type": "rocky"
+    "type": "rocky",
+    "album": "ROCKYST"
   },
   {
     "tabIndex": 3,
     "name": "BLANK Event",
     "folder": "blank-pc",
     "dataProp": "blankPC_",
-    "type": "rocky"
+    "type": "rocky",
+    "album": "BLANK"
+
   },
   {
     "tabIndex": 4,
