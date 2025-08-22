@@ -10,10 +10,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
+import { AppComponent, CustomizeTemplate } from './app.component';
+import { AppService } from './app.service'
+import { AppRoutingModule } from './app-routing.module'; // ✅ import this
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CustomizeTemplate],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -25,9 +27,10 @@ import { AppComponent } from './app.component';
     MatButtonModule,
     MatSelectModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule 
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
