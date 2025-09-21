@@ -12,14 +12,6 @@
   width: 195px;
 }
 
-.refresh-btn{
-  position: absolute;
-  color: white;
-  z-index: 1000000;
-  right: 1em;
-  top: 1em;
-}
-
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -29,7 +21,6 @@
 
   img {
     width: 100%;
-    border-radius: 9px;
   }
 }
 
@@ -177,6 +168,10 @@ mat-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.selected-btn {
+  color: rgb(126 33 42) !important;             
 }
 
 @keyframes spin {

@@ -1,6 +1,6 @@
 <div *ngIf="!customizeTemplate" id="rocky-photocards">
   <div color="primary" class="header m-b-10">
-    <img [src]="'assets/_logo_.png'" class="logo">
+    <img [src]="'assets/logo.png'" class="logo">
     <div class="font-12 spacing-2"> 
       <span>Last Update {{update}}</span>
       <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
@@ -54,9 +54,9 @@
   <app-customize-template ></app-customize-template>
 </div>
 <div class="sticky" #stickyDiv>
-  <button mat-icon-button (click)="home()" matTooltip="Template"><mat-icon>photo_library</mat-icon></button>
-  <button mat-icon-button (click)="viewWant()" matTooltip="Selected photocard"><mat-icon>playlist_add_check	</mat-icon></button>
-  <button mat-icon-button (click)="captureAndDownload()" matTooltip="Download"><mat-icon>file_download</mat-icon></button>
+  <button mat-icon-button (click)="home()" [ngClass]="{ 'selected-btn': activeButton === 'home' }" matTooltip="Template"><mat-icon>photo_library</mat-icon></button>
+  <button mat-icon-button (click)="viewWant()" [ngClass]="{ 'selected-btn': activeButton === 'viewWant' }" matTooltip="Selected photocard"><mat-icon>playlist_add_check	</mat-icon></button>
+  <button mat-icon-button (click)="captureAndDownload()" [ngClass]="{ 'selected-btn': activeButton === 'captureAndDownload' }" matTooltip="Download"><mat-icon>file_download</mat-icon></button>
   <button mat-icon-button (click)="showNote = !showNote; showToDo = showNote && showToDo ? !showToDo : showToDo" matTooltip="Notice"><mat-icon>announcement</mat-icon></button>
   <button mat-icon-button (click)="showToDo = !showToDo; showNote = showNote && showToDo ? !showNote : showNote" matTooltip="What To Do"><mat-icon>help</mat-icon></button>
   <button mat-icon-button (click)="refresh()" matTooltip="Refresh"><mat-icon>refresh</mat-icon></button>
