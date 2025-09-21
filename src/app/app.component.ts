@@ -15,6 +15,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
   public template = 'Rocky album photocards';
   public tabSelected = 0;
+  public activeButton = 'home'
   showToDo = false;
   showNote = false;
   update: string = '';
@@ -221,10 +222,12 @@ export class AppComponent {
     this.appService.setData(this.want);
     this.customizeTemplate = true;
     this.template = 'Rocky-photocards'
+    this.activeButton = 'viewWant';
   }
 
   home() {
     this.customizeTemplate = false;
+    this.activeButton = 'home';
   }
 }
 
