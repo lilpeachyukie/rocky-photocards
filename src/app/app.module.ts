@@ -13,6 +13,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent, CustomizeTemplate } from './app.component';
 import { AppService } from './app.service'
 import { AppRoutingModule } from './app-routing.module'; // ✅ import this
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [AppComponent, CustomizeTemplate],
@@ -28,7 +32,12 @@ import { AppRoutingModule } from './app-routing.module'; // ✅ import this
     MatSelectModule,
     MatMenuModule,
     HttpClientModule,
-    AppRoutingModule 
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatSidenavModule,
+    MatCheckboxModule
   ],
   providers: [AppService],
   bootstrap: [AppComponent]

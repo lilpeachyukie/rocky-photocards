@@ -3,64 +3,127 @@
     <img [src]="'assets/logo.png'" class="logo">
     <div class="font-12 spacing-2"> 
       <span>Last Update {{update}}</span>
-      <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link ">Lilpeachyukie</a></span>
+      <span> By <a href="https://x.com/lilpeachyukie" target="_blank" class="a-link">Lilpeachyukie</a></span>
     </div>
   </div>
-  <mat-tab-group (selectedIndexChange)="onTabChange($event)">
-    <mat-tab *ngFor="let sec of photoSections" [label]="sec.name">
-      <div class="gallery">
-        <ng-container *ngIf="sec.type === 'rocky'">
-          <mat-card *ngFor="let photo of getPhotoArray(sec.dataProp)" (click)="addWant(photo.caption, photo.filename, sec.folder, sec.album)" [ngClass]="{ 'selected': getSelected(sec.folder, photo.filename)}" >
-            <mat-card-content class="d-grid" >
-              <img [src]="hasNoPhotoMap[sec.dataProp] && !photo.filename ? 'assets/images/nophoto.png' : 'assets/images/' + sec.folder + '/' + photo.filename"
-                  alt="{{ photo.caption }}">
-              <div class="title-photo">{{photo.album}}{{ photo.caption }}</div>
-            </mat-card-content>
-          </mat-card>
-        </ng-container>
 
-        <ng-container *ngIf="sec.type === 'astro'">
-          <div class="w-100 select-photocard-astro">
-            <mat-form-field appearance="outline" class="w-100">
-              <mat-label>Photocards</mat-label>
-              <mat-select [(value)]="selectedAstroPC" (selectionChange)="onChangeDislay($event.value)" multiple>
-                <mat-option *ngFor="let sub of sec.subSections" [value]="sub.key">
-                  {{ sub.label }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
+  <mat-sidenav-container>
 
-          <ng-container *ngFor="let sub of sec.subSections">
-            <div *ngIf="selectedAstroPC.includes(sub.key)">
-              <div align="center" class="sub-header">{{ sub.label }}</div>
-              <div class="gallery">
-                <mat-card *ngFor="let photo of getPhotoArray(sub.dataProp)" (click)="addWant(photo.caption, photo.filename, sub.folderImage, '')" [ngClass]="{ 'selected': getSelected(sub.folderImage, photo.filename)}">
-                  <mat-card-content class="d-grid" >
-                    <img [src]="'assets/images/' + sub.folderImage + '/' + photo.filename" 
-                        alt="{{ photo.caption }}">
-                    <div class="title-photo">{{ photo.caption }}</div>
-                  </mat-card-content>
-                </mat-card>
-              </div>
-            </div>
-          </ng-container>
-        </ng-container>
+    <!-- Right side filter sidenav -->
+    <mat-sidenav #filterSidenav mode="over" position="end" class="filter-sidenav">
+      <h3>Filter Options</h3>
+      <h5>For Non-Album</h5>
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Year</mat-label>
+        <mat-select [(ngModel)]="selectedYear" (selectionChange)="getFilteredPhotos()" multiple>
+          <mat-option *ngFor="let y of years" [value]="y">{{ y }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="w-100">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="selectedCategory" (selectionChange)="getFilteredPhotos()" multiple>
+          <mat-option *ngFor="let c of categories" [value]="c">{{ c }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-checkbox class="example-margin" [(ngModel)]="excludePhoto">Exclude unrevealed photocards</mat-checkbox>
+      <div class="m-t-10"></div>
+      <button mat-stroked-button color="primary" (click)="filterSidenav.close()" class="m-t-10">Close</button>
+    </mat-sidenav>
+
+    <!-- MAIN CONTENT -->
+    <mat-sidenav-content>
+      <!-- Tabs header row with filter icon -->
+      <div class="tab-header-row">
+        <mat-tab-group
+          [(selectedIndex)]="activeTab"
+          (selectedIndexChange)="onTabChange($event)"
+          class="tab-group-flex">
+          <mat-tab *ngFor="let sec of photoSections" [label]="sec.name"></mat-tab>
+        </mat-tab-group>
+
+        <!-- Filter icon toggle (only for Tab 1) -->
+        <button id="toggle"
+          mat-icon-button
+          *ngIf="activeTab === 1"
+          (click)="filterSidenav.toggle()"
+          matTooltip="Filter">
+          <mat-icon>filter_list</mat-icon>
+        </button>
       </div>
-    </mat-tab>
-  </mat-tab-group>
+
+      <!-- Tab content -->
+      <div  *ngFor="let sec of photoSections; let i = index" >
+        <!-- <ng-container *ngFor="let sec of photoSections; let i = index"  > -->
+          <div *ngIf="activeTab === i" class="gallery" >
+            <ng-container *ngIf="sec.type === 'rocky'">
+              <mat-card
+                *ngFor="let photo of sec.tabIndex === 1 ? nonAlbumFiltered : getPhotoArray(sec.dataProp)"
+                (click)="addWant(photo.caption, photo.filename, sec.folder, sec.album)"
+                [ngClass]="{ 'selected': getSelected(sec.folder, photo.filename)}"
+                [style.display]="photo.nophoto && excludePhoto ? 'none' : 'block'"
+                >
+                <mat-card-content class="d-grid">
+                  <img
+                    [src]="hasNoPhotoMap[sec.dataProp] && !photo.filename
+                      ? 'assets/images/nophoto.png'
+                      : 'assets/images/' + sec.folder + '/' + photo.filename"
+                    alt="{{ photo.caption }}">
+                  <div class="title-photo">{{ photo.album }}{{ photo.caption }}</div>
+                </mat-card-content>
+              </mat-card>
+            </ng-container>
+
+            <ng-container *ngIf="sec.type === 'astro'">
+              <div class="w-100 select-photocard-astro">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Photocards</mat-label>
+                  <mat-select [(value)]="selectedAstroPC" (selectionChange)="onChangeDislay($event.value)" multiple>
+                    <mat-option *ngFor="let sub of sec.subSections" [value]="sub.key">
+                      {{ sub.label }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+
+              <ng-container *ngFor="let sub of sec.subSections">
+                <div *ngIf="selectedAstroPC.includes(sub.key)">
+                  <div align="center" class="sub-header">{{ sub.label }}</div>
+                  <div class="gallery">
+                    <mat-card
+                      *ngFor="let photo of getPhotoArray(sub.dataProp)"
+                      (click)="addWant(photo.caption, photo.filename, sub.folderImage, '')"
+                      [ngClass]="{ 'selected': getSelected(sub.folderImage, photo.filename)}">
+                      <mat-card-content class="d-grid">
+                        <img [src]="'assets/images/' + sub.folderImage + '/' + photo.filename" alt="{{ photo.caption }}">
+                        <div class="title-photo">{{ photo.caption }}</div>
+                      </mat-card-content>
+                    </mat-card>
+                  </div>
+                </div>
+              </ng-container>
+            </ng-container>
+          </div>
+        <!-- </ng-container> -->
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 </div>
+
+<!-- Other components remain unchanged -->
 <div *ngIf="customizeTemplate">
-  <app-customize-template ></app-customize-template>
+  <app-customize-template></app-customize-template>
 </div>
-<div class="sticky" #stickyDiv>
+
+<div class="sticky" #stickyDiv [style.display]="filterSidenav?.opened ? 'none' : 'flex'">
   <button mat-icon-button (click)="home()" [ngClass]="{ 'selected-btn': activeButton === 'home' }" matTooltip="Template"><mat-icon>photo_library</mat-icon></button>
-  <button mat-icon-button (click)="viewWant()" [ngClass]="{ 'selected-btn': activeButton === 'viewWant' }" matTooltip="Selected photocard"><mat-icon>playlist_add_check	</mat-icon></button>
+  <button mat-icon-button (click)="viewWant()" [ngClass]="{ 'selected-btn': activeButton === 'viewWant' }" matTooltip="Selected photocard"><mat-icon>playlist_add_check</mat-icon></button>
   <button mat-icon-button (click)="captureAndDownload()" [ngClass]="{ 'selected-btn': activeButton === 'captureAndDownload' }" matTooltip="Download"><mat-icon>file_download</mat-icon></button>
   <button mat-icon-button (click)="showNote = !showNote; showToDo = showNote && showToDo ? !showToDo : showToDo" matTooltip="Notice"><mat-icon>announcement</mat-icon></button>
   <button mat-icon-button (click)="showToDo = !showToDo; showNote = showNote && showToDo ? !showNote : showNote" matTooltip="What To Do"><mat-icon>help</mat-icon></button>
   <button mat-icon-button (click)="refresh()" matTooltip="Refresh"><mat-icon>refresh</mat-icon></button>
 </div>
+
 <div *ngIf="showToDo" class="note" [innerHTML]="intro"></div>
 <div *ngIf="showNote" class="note" [innerHTML]="note"></div>
-<div id="loader" class="loader"><div class="spinner"></div> </div>
+<div id="loader" class="loader"><div class="spinner"></div></div>

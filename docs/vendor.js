@@ -23081,6 +23081,1208 @@ class AnonymousSubject extends Subject {
 
 /***/ }),
 
+/***/ "XhcP":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@angular/material/__ivy_ngcc__/fesm2015/sidenav.js ***!
+  \*************************************************************************/
+/*! exports provided: MAT_DRAWER_DEFAULT_AUTOSIZE, MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY, MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenav, MatSidenavContainer, MatSidenavContent, MatSidenavModule, matDrawerAnimations, throwMatDuplicatedDrawerError, ɵangular_material_src_material_sidenav_sidenav_a */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_DRAWER_DEFAULT_AUTOSIZE", function() { return MAT_DRAWER_DEFAULT_AUTOSIZE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY", function() { return MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatDrawer", function() { return MatDrawer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatDrawerContainer", function() { return MatDrawerContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatDrawerContent", function() { return MatDrawerContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSidenav", function() { return MatSidenav; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSidenavContainer", function() { return MatSidenavContainer; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSidenavContent", function() { return MatSidenavContent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatSidenavModule", function() { return MatSidenavModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "matDrawerAnimations", function() { return matDrawerAnimations; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "throwMatDuplicatedDrawerError", function() { return throwMatDuplicatedDrawerError; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ɵangular_material_src_material_sidenav_sidenav_a", function() { return MAT_DRAWER_CONTAINER; });
+/* harmony import */ var _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/platform */ "nLfN");
+/* harmony import */ var _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/scrolling */ "vxfF");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/cdk/a11y */ "u47x");
+/* harmony import */ var _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/bidi */ "cH1L");
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/cdk/coercion */ "8LU1");
+/* harmony import */ var _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/cdk/keycodes */ "FtGj");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/animations */ "R0Ic");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/**
+ * Animations used by the Material drawers.
+ * @docs-private
+ */
+
+
+
+
+
+
+
+const _c0 = ["*"];
+function MatDrawerContainer_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function MatDrawerContainer_div_0_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r2._onBackdropClicked(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-shown", ctx_r0._isShowingBackdrop());
+} }
+function MatDrawerContainer_mat_drawer_content_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-drawer-content");
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1, 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} }
+const _c1 = [[["mat-drawer"]], [["mat-drawer-content"]], "*"];
+const _c2 = ["mat-drawer", "mat-drawer-content", "*"];
+function MatSidenavContainer_div_0_Template(rf, ctx) { if (rf & 1) {
+    const _r3 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetCurrentView"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵlistener"]("click", function MatSidenavContainer_div_0_Template_div_click_0_listener() { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵrestoreView"](_r3); const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"](); return ctx_r2._onBackdropClicked(); });
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-shown", ctx_r0._isShowingBackdrop());
+} }
+function MatSidenavContainer_mat_sidenav_content_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "mat-sidenav-content", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1, 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+} }
+const _c3 = [[["mat-sidenav"]], [["mat-sidenav-content"]], "*"];
+const _c4 = ["mat-sidenav", "mat-sidenav-content", "*"];
+const _c5 = ".mat-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.mat-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.mat-drawer-container[fullscreen].mat-drawer-container-has-open{overflow:hidden}.mat-drawer-container.mat-drawer-container-explicit-backdrop .mat-drawer-side{z-index:3}.mat-drawer-container.ng-animate-disabled .mat-drawer-backdrop,.mat-drawer-container.ng-animate-disabled .mat-drawer-content,.ng-animate-disabled .mat-drawer-container .mat-drawer-backdrop,.ng-animate-disabled .mat-drawer-container .mat-drawer-content{transition:none}.mat-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.mat-drawer-backdrop.mat-drawer-shown{visibility:visible}.mat-drawer-transition .mat-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .mat-drawer-backdrop{opacity:.5}.mat-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.mat-drawer-transition .mat-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.mat-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .mat-drawer,.cdk-high-contrast-active [dir=rtl] .mat-drawer.mat-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .mat-drawer,.cdk-high-contrast-active .mat-drawer.mat-drawer-end{border-left:solid 1px currentColor;border-right:none}.mat-drawer.mat-drawer-side{z-index:2}.mat-drawer.mat-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer.mat-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.mat-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.mat-sidenav-fixed{position:fixed}\n";
+const matDrawerAnimations = {
+    /** Animation that slides a drawer in and out. */
+    transformDrawer: Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["trigger"])('transform', [
+        // We remove the `transform` here completely, rather than setting it to zero, because:
+        // 1. Having a transform can cause elements with ripples or an animated
+        //    transform to shift around in Chrome with an RTL layout (see #10023).
+        // 2. 3d transforms causes text to appear blurry on IE and Edge.
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["state"])('open, open-instant', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["style"])({
+            'transform': 'none',
+            'visibility': 'visible',
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["state"])('void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["style"])({
+            // Avoids the shadow showing up when closed in SSR.
+            'box-shadow': 'none',
+            'visibility': 'hidden',
+        })),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["transition"])('void => open-instant', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["animate"])('0ms')),
+        Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["transition"])('void <=> open, open-instant => void', Object(_angular_animations__WEBPACK_IMPORTED_MODULE_11__["animate"])('400ms cubic-bezier(0.25, 0.8, 0.25, 1)'))
+    ])
+};
+
+/**
+ * Throws an exception when two MatDrawer are matching the same position.
+ * @docs-private
+ */
+function throwMatDuplicatedDrawerError(position) {
+    throw Error(`A drawer was already declared for 'position="${position}"'`);
+}
+/** Configures whether drawers should use auto sizing by default. */
+const MAT_DRAWER_DEFAULT_AUTOSIZE = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["InjectionToken"]('MAT_DRAWER_DEFAULT_AUTOSIZE', {
+    providedIn: 'root',
+    factory: MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY,
+});
+/**
+ * Used to provide a drawer container to a drawer while avoiding circular references.
+ * @docs-private
+ */
+const MAT_DRAWER_CONTAINER = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["InjectionToken"]('MAT_DRAWER_CONTAINER');
+/** @docs-private */
+function MAT_DRAWER_DEFAULT_AUTOSIZE_FACTORY() {
+    return false;
+}
+class MatDrawerContent extends _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollable"] {
+    constructor(_changeDetectorRef, _container, elementRef, scrollDispatcher, ngZone) {
+        super(elementRef, scrollDispatcher, ngZone);
+        this._changeDetectorRef = _changeDetectorRef;
+        this._container = _container;
+    }
+    ngAfterContentInit() {
+        this._container._contentMarginChanges.subscribe(() => {
+            this._changeDetectorRef.markForCheck();
+        });
+    }
+}
+MatDrawerContent.ɵfac = function MatDrawerContent_Factory(t) { return new (t || MatDrawerContent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatDrawerContainer)), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"])); };
+MatDrawerContent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatDrawerContent, selectors: [["mat-drawer-content"]], hostAttrs: [1, "mat-drawer-content"], hostVars: 4, hostBindings: function MatDrawerContent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("margin-left", ctx._container._contentMargins.left, "px")("margin-right", ctx._container._contentMargins.right, "px");
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 0, template: function MatDrawerContent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](0);
+    } }, encapsulation: 2, changeDetection: 0 });
+MatDrawerContent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
+    { type: MatDrawerContainer, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatDrawerContainer),] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
+    { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatDrawerContent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-drawer-content',
+                template: '<ng-content></ng-content>',
+                host: {
+                    'class': 'mat-drawer-content',
+                    '[style.margin-left.px]': '_container._contentMargins.left',
+                    '[style.margin-right.px]': '_container._contentMargins.right'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] }, { type: MatDrawerContainer, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatDrawerContainer)]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }, { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }]; }, null); })();
+/**
+ * This component corresponds to a drawer that can be opened on the drawer container.
+ */
+class MatDrawer {
+    constructor(_elementRef, _focusTrapFactory, _focusMonitor, _platform, _ngZone, _doc, _container) {
+        this._elementRef = _elementRef;
+        this._focusTrapFactory = _focusTrapFactory;
+        this._focusMonitor = _focusMonitor;
+        this._platform = _platform;
+        this._ngZone = _ngZone;
+        this._doc = _doc;
+        this._container = _container;
+        this._elementFocusedBeforeDrawerWasOpened = null;
+        /** Whether the drawer is initialized. Used for disabling the initial animation. */
+        this._enableAnimations = false;
+        this._position = 'start';
+        this._mode = 'over';
+        this._disableClose = false;
+        this._opened = false;
+        /** Emits whenever the drawer has started animating. */
+        this._animationStarted = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        /** Emits whenever the drawer is done animating. */
+        this._animationEnd = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        /** Current state of the sidenav animation. */
+        // @HostBinding is used in the class as it is expected to be extended.  Since @Component decorator
+        // metadata is not inherited by child classes, instead the host binding data is defined in a way
+        // that can be inherited.
+        // tslint:disable:no-host-decorator-in-concrete
+        this._animationState = 'void';
+        /** Event emitted when the drawer open state is changed. */
+        this.openedChange = 
+        // Note this has to be async in order to avoid some issues with two-bindings (see #8872).
+        new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"](/* isAsync */ true);
+        /** Event emitted when the drawer has been opened. */
+        this._openedStream = this.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])(o => o), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["map"])(() => { }));
+        /** Event emitted when the drawer has started opening. */
+        this.openedStart = this._animationStarted.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])(e => e.fromState !== e.toState && e.toState.indexOf('open') === 0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["mapTo"])(undefined));
+        /** Event emitted when the drawer has been closed. */
+        this._closedStream = this.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])(o => !o), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["map"])(() => { }));
+        /** Event emitted when the drawer has started closing. */
+        this.closedStart = this._animationStarted.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])(e => e.fromState !== e.toState && e.toState === 'void'), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["mapTo"])(undefined));
+        /** Emits when the component is destroyed. */
+        this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        /** Event emitted when the drawer's position changes. */
+        // tslint:disable-next-line:no-output-on-prefix
+        this.onPositionChanged = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        /**
+         * An observable that emits when the drawer mode changes. This is used by the drawer container to
+         * to know when to when the mode changes so it can adapt the margins on the content.
+         */
+        this._modeChanged = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        this.openedChange.subscribe((opened) => {
+            if (opened) {
+                if (this._doc) {
+                    this._elementFocusedBeforeDrawerWasOpened = this._doc.activeElement;
+                }
+                this._takeFocus();
+            }
+            else if (this._isFocusWithinDrawer()) {
+                this._restoreFocus();
+            }
+        });
+        /**
+         * Listen to `keydown` events outside the zone so that change detection is not run every
+         * time a key is pressed. Instead we re-enter the zone only if the `ESC` key is pressed
+         * and we don't have close disabled.
+         */
+        this._ngZone.runOutsideAngular(() => {
+            Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["fromEvent"])(this._elementRef.nativeElement, 'keydown').pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])(event => {
+                return event.keyCode === _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__["ESCAPE"] && !this.disableClose && !Object(_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_8__["hasModifierKey"])(event);
+            }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._destroyed)).subscribe(event => this._ngZone.run(() => {
+                this.close();
+                event.stopPropagation();
+                event.preventDefault();
+            }));
+        });
+        // We need a Subject with distinctUntilChanged, because the `done` event
+        // fires twice on some browsers. See https://github.com/angular/angular/issues/24084
+        this._animationEnd.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["distinctUntilChanged"])((x, y) => {
+            return x.fromState === y.fromState && x.toState === y.toState;
+        })).subscribe((event) => {
+            const { fromState, toState } = event;
+            if ((toState.indexOf('open') === 0 && fromState === 'void') ||
+                (toState === 'void' && fromState.indexOf('open') === 0)) {
+                this.openedChange.emit(this._opened);
+            }
+        });
+    }
+    /** The side that the drawer is attached to. */
+    get position() { return this._position; }
+    set position(value) {
+        // Make sure we have a valid value.
+        value = value === 'end' ? 'end' : 'start';
+        if (value != this._position) {
+            this._position = value;
+            this.onPositionChanged.emit();
+        }
+    }
+    /** Mode of the drawer; one of 'over', 'push' or 'side'. */
+    get mode() { return this._mode; }
+    set mode(value) {
+        this._mode = value;
+        this._updateFocusTrapState();
+        this._modeChanged.next();
+    }
+    /** Whether the drawer can be closed with the escape key or by clicking on the backdrop. */
+    get disableClose() { return this._disableClose; }
+    set disableClose(value) { this._disableClose = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value); }
+    /**
+     * Whether the drawer should focus the first focusable element automatically when opened.
+     * Defaults to false in when `mode` is set to `side`, otherwise defaults to `true`. If explicitly
+     * enabled, focus will be moved into the sidenav in `side` mode as well.
+     */
+    get autoFocus() {
+        const value = this._autoFocus;
+        // Note that usually we disable auto focusing in `side` mode, because we don't know how the
+        // sidenav is being used, but in some cases it still makes sense to do it. If the consumer
+        // explicitly enabled `autoFocus`, we take it as them always wanting to enable it.
+        return value == null ? this.mode !== 'side' : value;
+    }
+    set autoFocus(value) { this._autoFocus = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value); }
+    /**
+     * Whether the drawer is opened. We overload this because we trigger an event when it
+     * starts or end.
+     */
+    get opened() { return this._opened; }
+    set opened(value) { this.toggle(Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value)); }
+    /**
+     * Moves focus into the drawer. Note that this works even if
+     * the focus trap is disabled in `side` mode.
+     */
+    _takeFocus() {
+        if (!this.autoFocus || !this._focusTrap) {
+            return;
+        }
+        this._focusTrap.focusInitialElementWhenReady().then(hasMovedFocus => {
+            // If there were no focusable elements, focus the sidenav itself so the keyboard navigation
+            // still works. We need to check that `focus` is a function due to Universal.
+            if (!hasMovedFocus && typeof this._elementRef.nativeElement.focus === 'function') {
+                this._elementRef.nativeElement.focus();
+            }
+        });
+    }
+    /**
+     * Restores focus to the element that was originally focused when the drawer opened.
+     * If no element was focused at that time, the focus will be restored to the drawer.
+     */
+    _restoreFocus() {
+        if (!this.autoFocus) {
+            return;
+        }
+        // Note that we don't check via `instanceof HTMLElement` so that we can cover SVGs as well.
+        if (this._elementFocusedBeforeDrawerWasOpened) {
+            this._focusMonitor.focusVia(this._elementFocusedBeforeDrawerWasOpened, this._openedVia);
+        }
+        else {
+            this._elementRef.nativeElement.blur();
+        }
+        this._elementFocusedBeforeDrawerWasOpened = null;
+        this._openedVia = null;
+    }
+    /** Whether focus is currently within the drawer. */
+    _isFocusWithinDrawer() {
+        var _a;
+        const activeEl = (_a = this._doc) === null || _a === void 0 ? void 0 : _a.activeElement;
+        return !!activeEl && this._elementRef.nativeElement.contains(activeEl);
+    }
+    ngAfterContentInit() {
+        this._focusTrap = this._focusTrapFactory.create(this._elementRef.nativeElement);
+        this._updateFocusTrapState();
+    }
+    ngAfterContentChecked() {
+        // Enable the animations after the lifecycle hooks have run, in order to avoid animating
+        // drawers that are open by default. When we're on the server, we shouldn't enable the
+        // animations, because we don't want the drawer to animate the first time the user sees
+        // the page.
+        if (this._platform.isBrowser) {
+            this._enableAnimations = true;
+        }
+    }
+    ngOnDestroy() {
+        if (this._focusTrap) {
+            this._focusTrap.destroy();
+        }
+        this._animationStarted.complete();
+        this._animationEnd.complete();
+        this._modeChanged.complete();
+        this._destroyed.next();
+        this._destroyed.complete();
+    }
+    /**
+     * Open the drawer.
+     * @param openedVia Whether the drawer was opened by a key press, mouse click or programmatically.
+     * Used for focus management after the sidenav is closed.
+     */
+    open(openedVia) {
+        return this.toggle(true, openedVia);
+    }
+    /** Close the drawer. */
+    close() {
+        return this.toggle(false);
+    }
+    /** Closes the drawer with context that the backdrop was clicked. */
+    _closeViaBackdropClick() {
+        // If the drawer is closed upon a backdrop click, we always want to restore focus. We
+        // don't need to check whether focus is currently in the drawer, as clicking on the
+        // backdrop causes blurring of the active element.
+        return this._setOpen(/* isOpen */ false, /* restoreFocus */ true);
+    }
+    /**
+     * Toggle this drawer.
+     * @param isOpen Whether the drawer should be open.
+     * @param openedVia Whether the drawer was opened by a key press, mouse click or programmatically.
+     * Used for focus management after the sidenav is closed.
+     */
+    toggle(isOpen = !this.opened, openedVia) {
+        // If the focus is currently inside the drawer content and we are closing the drawer,
+        // restore the focus to the initially focused element (when the drawer opened).
+        return this._setOpen(isOpen, /* restoreFocus */ !isOpen && this._isFocusWithinDrawer(), openedVia);
+    }
+    /**
+     * Toggles the opened state of the drawer.
+     * @param isOpen Whether the drawer should open or close.
+     * @param restoreFocus Whether focus should be restored on close.
+     * @param openedVia Focus origin that can be optionally set when opening a drawer. The
+     *   origin will be used later when focus is restored on drawer close.
+     */
+    _setOpen(isOpen, restoreFocus, openedVia = 'program') {
+        this._opened = isOpen;
+        if (isOpen) {
+            this._animationState = this._enableAnimations ? 'open' : 'open-instant';
+            this._openedVia = openedVia;
+        }
+        else {
+            this._animationState = 'void';
+            if (restoreFocus) {
+                this._restoreFocus();
+            }
+        }
+        this._updateFocusTrapState();
+        return new Promise(resolve => {
+            this.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["take"])(1)).subscribe(open => resolve(open ? 'open' : 'close'));
+        });
+    }
+    _getWidth() {
+        return this._elementRef.nativeElement ? (this._elementRef.nativeElement.offsetWidth || 0) : 0;
+    }
+    /** Updates the enabled state of the focus trap. */
+    _updateFocusTrapState() {
+        if (this._focusTrap) {
+            // The focus trap is only enabled when the drawer is open in any mode other than side.
+            this._focusTrap.enabled = this.opened && this.mode !== 'side';
+        }
+    }
+    // We have to use a `HostListener` here in order to support both Ivy and ViewEngine.
+    // In Ivy the `host` bindings will be merged when this class is extended, whereas in
+    // ViewEngine they're overwritten.
+    // TODO(crisbeto): we move this back into `host` once Ivy is turned on by default.
+    // tslint:disable-next-line:no-host-decorator-in-concrete
+    _animationStartListener(event) {
+        this._animationStarted.next(event);
+    }
+    // We have to use a `HostListener` here in order to support both Ivy and ViewEngine.
+    // In Ivy the `host` bindings will be merged when this class is extended, whereas in
+    // ViewEngine they're overwritten.
+    // TODO(crisbeto): we move this back into `host` once Ivy is turned on by default.
+    // tslint:disable-next-line:no-host-decorator-in-concrete
+    _animationDoneListener(event) {
+        this._animationEnd.next(event);
+    }
+}
+MatDrawer.ɵfac = function MatDrawer_Factory(t) { return new (t || MatDrawer)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusTrapFactory"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["Platform"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](MAT_DRAWER_CONTAINER, 8)); };
+MatDrawer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatDrawer, selectors: [["mat-drawer"]], hostAttrs: ["tabIndex", "-1", 1, "mat-drawer"], hostVars: 12, hostBindings: function MatDrawer_HostBindings(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsyntheticHostListener"]("@transform.start", function MatDrawer_animation_transform_start_HostBindingHandler($event) { return ctx._animationStartListener($event); })("@transform.done", function MatDrawer_animation_transform_done_HostBindingHandler($event) { return ctx._animationDoneListener($event); });
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("align", null);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsyntheticHostProperty"]("@transform", ctx._animationState);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-end", ctx.position === "end")("mat-drawer-over", ctx.mode === "over")("mat-drawer-push", ctx.mode === "push")("mat-drawer-side", ctx.mode === "side")("mat-drawer-opened", ctx.opened);
+    } }, inputs: { position: "position", mode: "mode", disableClose: "disableClose", autoFocus: "autoFocus", opened: "opened" }, outputs: { openedChange: "openedChange", _openedStream: "opened", openedStart: "openedStart", _closedStream: "closed", closedStart: "closedStart", onPositionChanged: "positionChanged" }, exportAs: ["matDrawer"], ngContentSelectors: _c0, decls: 2, vars: 0, consts: [["cdkScrollable", "", 1, "mat-drawer-inner-container"]], template: function MatDrawer_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollable"]], encapsulation: 2, data: { animation: [matDrawerAnimations.transformDrawer] }, changeDetection: 0 });
+MatDrawer.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
+    { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusTrapFactory"] },
+    { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusMonitor"] },
+    { type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["Platform"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"],] }] },
+    { type: MatDrawerContainer, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [MAT_DRAWER_CONTAINER,] }] }
+];
+MatDrawer.propDecorators = {
+    position: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    mode: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    disableClose: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    autoFocus: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    opened: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    _animationState: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"], args: ['@transform',] }],
+    openedChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+    _openedStream: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"], args: ['opened',] }],
+    openedStart: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+    _closedStream: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"], args: ['closed',] }],
+    closedStart: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }],
+    onPositionChanged: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"], args: ['positionChanged',] }],
+    _animationStartListener: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"], args: ['@transform.start', ['$event'],] }],
+    _animationDoneListener: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"], args: ['@transform.done', ['$event'],] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatDrawer, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-drawer',
+                exportAs: 'matDrawer',
+                template: "<div class=\"mat-drawer-inner-container\" cdkScrollable>\r\n  <ng-content></ng-content>\r\n</div>\r\n",
+                animations: [matDrawerAnimations.transformDrawer],
+                host: {
+                    'class': 'mat-drawer',
+                    // must prevent the browser from aligning text based on value
+                    '[attr.align]': 'null',
+                    '[class.mat-drawer-end]': 'position === "end"',
+                    '[class.mat-drawer-over]': 'mode === "over"',
+                    '[class.mat-drawer-push]': 'mode === "push"',
+                    '[class.mat-drawer-side]': 'mode === "side"',
+                    '[class.mat-drawer-opened]': 'opened',
+                    'tabIndex': '-1'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }, { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusTrapFactory"] }, { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_5__["FocusMonitor"] }, { type: _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["Platform"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"]
+            }, {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["DOCUMENT"]]
+            }] }, { type: MatDrawerContainer, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"]
+            }, {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [MAT_DRAWER_CONTAINER]
+            }] }]; }, { _animationState: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostBinding"],
+            args: ['@transform']
+        }], openedChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"]
+        }], _openedStream: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"],
+            args: ['opened']
+        }], openedStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"]
+        }], _closedStream: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"],
+            args: ['closed']
+        }], closedStart: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"]
+        }], onPositionChanged: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"],
+            args: ['positionChanged']
+        }], position: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], mode: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], disableClose: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], autoFocus: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], opened: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], 
+    // We have to use a `HostListener` here in order to support both Ivy and ViewEngine.
+    // In Ivy the `host` bindings will be merged when this class is extended, whereas in
+    // ViewEngine they're overwritten.
+    // TODO(crisbeto): we move this back into `host` once Ivy is turned on by default.
+    // tslint:disable-next-line:no-host-decorator-in-concrete
+    _animationStartListener: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"],
+            args: ['@transform.start', ['$event']]
+        }], 
+    // We have to use a `HostListener` here in order to support both Ivy and ViewEngine.
+    // In Ivy the `host` bindings will be merged when this class is extended, whereas in
+    // ViewEngine they're overwritten.
+    // TODO(crisbeto): we move this back into `host` once Ivy is turned on by default.
+    // tslint:disable-next-line:no-host-decorator-in-concrete
+    _animationDoneListener: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["HostListener"],
+            args: ['@transform.done', ['$event']]
+        }] }); })();
+/**
+ * `<mat-drawer-container>` component.
+ *
+ * This is the parent component to one or two `<mat-drawer>`s that validates the state internally
+ * and coordinates the backdrop and content styling.
+ */
+class MatDrawerContainer {
+    constructor(_dir, _element, _ngZone, _changeDetectorRef, viewportRuler, defaultAutosize = false, _animationMode) {
+        this._dir = _dir;
+        this._element = _element;
+        this._ngZone = _ngZone;
+        this._changeDetectorRef = _changeDetectorRef;
+        this._animationMode = _animationMode;
+        /** Drawers that belong to this container. */
+        this._drawers = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["QueryList"]();
+        /** Event emitted when the drawer backdrop is clicked. */
+        this.backdropClick = new _angular_core__WEBPACK_IMPORTED_MODULE_3__["EventEmitter"]();
+        /** Emits when the component is destroyed. */
+        this._destroyed = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        /** Emits on every ngDoCheck. Used for debouncing reflows. */
+        this._doCheckSubject = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        /**
+         * Margins to be applied to the content. These are used to push / shrink the drawer content when a
+         * drawer is open. We use margin rather than transform even for push mode because transform breaks
+         * fixed position elements inside of the transformed element.
+         */
+        this._contentMargins = { left: null, right: null };
+        this._contentMarginChanges = new rxjs__WEBPACK_IMPORTED_MODULE_9__["Subject"]();
+        // If a `Dir` directive exists up the tree, listen direction changes
+        // and update the left/right properties to point to the proper start/end.
+        if (_dir) {
+            _dir.change.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._destroyed)).subscribe(() => {
+                this._validateDrawers();
+                this.updateContentMargins();
+            });
+        }
+        // Since the minimum width of the sidenav depends on the viewport width,
+        // we need to recompute the margins if the viewport changes.
+        viewportRuler.change()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._destroyed))
+            .subscribe(() => this.updateContentMargins());
+        this._autosize = defaultAutosize;
+    }
+    /** The drawer child with the `start` position. */
+    get start() { return this._start; }
+    /** The drawer child with the `end` position. */
+    get end() { return this._end; }
+    /**
+     * Whether to automatically resize the container whenever
+     * the size of any of its drawers changes.
+     *
+     * **Use at your own risk!** Enabling this option can cause layout thrashing by measuring
+     * the drawers on every change detection cycle. Can be configured globally via the
+     * `MAT_DRAWER_DEFAULT_AUTOSIZE` token.
+     */
+    get autosize() { return this._autosize; }
+    set autosize(value) { this._autosize = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value); }
+    /**
+     * Whether the drawer container should have a backdrop while one of the sidenavs is open.
+     * If explicitly set to `true`, the backdrop will be enabled for drawers in the `side`
+     * mode as well.
+     */
+    get hasBackdrop() {
+        if (this._backdropOverride == null) {
+            return !this._start || this._start.mode !== 'side' || !this._end || this._end.mode !== 'side';
+        }
+        return this._backdropOverride;
+    }
+    set hasBackdrop(value) {
+        this._backdropOverride = value == null ? null : Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value);
+    }
+    /** Reference to the CdkScrollable instance that wraps the scrollable content. */
+    get scrollable() {
+        return this._userContent || this._content;
+    }
+    ngAfterContentInit() {
+        this._allDrawers.changes
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["startWith"])(this._allDrawers), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._destroyed))
+            .subscribe((drawer) => {
+            this._drawers.reset(drawer.filter(item => !item._container || item._container === this));
+            this._drawers.notifyOnChanges();
+        });
+        this._drawers.changes.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["startWith"])(null)).subscribe(() => {
+            this._validateDrawers();
+            this._drawers.forEach((drawer) => {
+                this._watchDrawerToggle(drawer);
+                this._watchDrawerPosition(drawer);
+                this._watchDrawerMode(drawer);
+            });
+            if (!this._drawers.length ||
+                this._isDrawerOpen(this._start) ||
+                this._isDrawerOpen(this._end)) {
+                this.updateContentMargins();
+            }
+            this._changeDetectorRef.markForCheck();
+        });
+        // Avoid hitting the NgZone through the debounce timeout.
+        this._ngZone.runOutsideAngular(() => {
+            this._doCheckSubject.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["debounceTime"])(10), // Arbitrary debounce time, less than a frame at 60fps
+            Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._destroyed)).subscribe(() => this.updateContentMargins());
+        });
+    }
+    ngOnDestroy() {
+        this._contentMarginChanges.complete();
+        this._doCheckSubject.complete();
+        this._drawers.destroy();
+        this._destroyed.next();
+        this._destroyed.complete();
+    }
+    /** Calls `open` of both start and end drawers */
+    open() {
+        this._drawers.forEach(drawer => drawer.open());
+    }
+    /** Calls `close` of both start and end drawers */
+    close() {
+        this._drawers.forEach(drawer => drawer.close());
+    }
+    /**
+     * Recalculates and updates the inline styles for the content. Note that this should be used
+     * sparingly, because it causes a reflow.
+     */
+    updateContentMargins() {
+        // 1. For drawers in `over` mode, they don't affect the content.
+        // 2. For drawers in `side` mode they should shrink the content. We do this by adding to the
+        //    left margin (for left drawer) or right margin (for right the drawer).
+        // 3. For drawers in `push` mode the should shift the content without resizing it. We do this by
+        //    adding to the left or right margin and simultaneously subtracting the same amount of
+        //    margin from the other side.
+        let left = 0;
+        let right = 0;
+        if (this._left && this._left.opened) {
+            if (this._left.mode == 'side') {
+                left += this._left._getWidth();
+            }
+            else if (this._left.mode == 'push') {
+                const width = this._left._getWidth();
+                left += width;
+                right -= width;
+            }
+        }
+        if (this._right && this._right.opened) {
+            if (this._right.mode == 'side') {
+                right += this._right._getWidth();
+            }
+            else if (this._right.mode == 'push') {
+                const width = this._right._getWidth();
+                right += width;
+                left -= width;
+            }
+        }
+        // If either `right` or `left` is zero, don't set a style to the element. This
+        // allows users to specify a custom size via CSS class in SSR scenarios where the
+        // measured widths will always be zero. Note that we reset to `null` here, rather
+        // than below, in order to ensure that the types in the `if` below are consistent.
+        left = left || null;
+        right = right || null;
+        if (left !== this._contentMargins.left || right !== this._contentMargins.right) {
+            this._contentMargins = { left, right };
+            // Pull back into the NgZone since in some cases we could be outside. We need to be careful
+            // to do it only when something changed, otherwise we can end up hitting the zone too often.
+            this._ngZone.run(() => this._contentMarginChanges.next(this._contentMargins));
+        }
+    }
+    ngDoCheck() {
+        // If users opted into autosizing, do a check every change detection cycle.
+        if (this._autosize && this._isPushed()) {
+            // Run outside the NgZone, otherwise the debouncer will throw us into an infinite loop.
+            this._ngZone.runOutsideAngular(() => this._doCheckSubject.next());
+        }
+    }
+    /**
+     * Subscribes to drawer events in order to set a class on the main container element when the
+     * drawer is open and the backdrop is visible. This ensures any overflow on the container element
+     * is properly hidden.
+     */
+    _watchDrawerToggle(drawer) {
+        drawer._animationStarted.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["filter"])((event) => event.fromState !== event.toState), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._drawers.changes))
+            .subscribe((event) => {
+            // Set the transition class on the container so that the animations occur. This should not
+            // be set initially because animations should only be triggered via a change in state.
+            if (event.toState !== 'open-instant' && this._animationMode !== 'NoopAnimations') {
+                this._element.nativeElement.classList.add('mat-drawer-transition');
+            }
+            this.updateContentMargins();
+            this._changeDetectorRef.markForCheck();
+        });
+        if (drawer.mode !== 'side') {
+            drawer.openedChange.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._drawers.changes)).subscribe(() => this._setContainerClass(drawer.opened));
+        }
+    }
+    /**
+     * Subscribes to drawer onPositionChanged event in order to
+     * re-validate drawers when the position changes.
+     */
+    _watchDrawerPosition(drawer) {
+        if (!drawer) {
+            return;
+        }
+        // NOTE: We need to wait for the microtask queue to be empty before validating,
+        // since both drawers may be swapping positions at the same time.
+        drawer.onPositionChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(this._drawers.changes)).subscribe(() => {
+            this._ngZone.onMicrotaskEmpty.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["take"])(1)).subscribe(() => {
+                this._validateDrawers();
+            });
+        });
+    }
+    /** Subscribes to changes in drawer mode so we can run change detection. */
+    _watchDrawerMode(drawer) {
+        if (drawer) {
+            drawer._modeChanged.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["takeUntil"])(Object(rxjs__WEBPACK_IMPORTED_MODULE_9__["merge"])(this._drawers.changes, this._destroyed)))
+                .subscribe(() => {
+                this.updateContentMargins();
+                this._changeDetectorRef.markForCheck();
+            });
+        }
+    }
+    /** Toggles the 'mat-drawer-opened' class on the main 'mat-drawer-container' element. */
+    _setContainerClass(isAdd) {
+        const classList = this._element.nativeElement.classList;
+        const className = 'mat-drawer-container-has-open';
+        if (isAdd) {
+            classList.add(className);
+        }
+        else {
+            classList.remove(className);
+        }
+    }
+    /** Validate the state of the drawer children components. */
+    _validateDrawers() {
+        this._start = this._end = null;
+        // Ensure that we have at most one start and one end drawer.
+        this._drawers.forEach(drawer => {
+            if (drawer.position == 'end') {
+                if (this._end != null && (typeof ngDevMode === 'undefined' || ngDevMode)) {
+                    throwMatDuplicatedDrawerError('end');
+                }
+                this._end = drawer;
+            }
+            else {
+                if (this._start != null && (typeof ngDevMode === 'undefined' || ngDevMode)) {
+                    throwMatDuplicatedDrawerError('start');
+                }
+                this._start = drawer;
+            }
+        });
+        this._right = this._left = null;
+        // Detect if we're LTR or RTL.
+        if (this._dir && this._dir.value === 'rtl') {
+            this._left = this._end;
+            this._right = this._start;
+        }
+        else {
+            this._left = this._start;
+            this._right = this._end;
+        }
+    }
+    /** Whether the container is being pushed to the side by one of the drawers. */
+    _isPushed() {
+        return (this._isDrawerOpen(this._start) && this._start.mode != 'over') ||
+            (this._isDrawerOpen(this._end) && this._end.mode != 'over');
+    }
+    _onBackdropClicked() {
+        this.backdropClick.emit();
+        this._closeModalDrawersViaBackdrop();
+    }
+    _closeModalDrawersViaBackdrop() {
+        // Close all open drawers where closing is not disabled and the mode is not `side`.
+        [this._start, this._end]
+            .filter(drawer => drawer && !drawer.disableClose && this._canHaveBackdrop(drawer))
+            .forEach(drawer => drawer._closeViaBackdropClick());
+    }
+    _isShowingBackdrop() {
+        return (this._isDrawerOpen(this._start) && this._canHaveBackdrop(this._start)) ||
+            (this._isDrawerOpen(this._end) && this._canHaveBackdrop(this._end));
+    }
+    _canHaveBackdrop(drawer) {
+        return drawer.mode !== 'side' || !!this._backdropOverride;
+    }
+    _isDrawerOpen(drawer) {
+        return drawer != null && drawer.opened;
+    }
+}
+MatDrawerContainer.ɵfac = function MatDrawerContainer_Factory(t) { return new (t || MatDrawerContainer)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__["Directionality"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ViewportRuler"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](MAT_DRAWER_DEFAULT_AUTOSIZE), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["ANIMATION_MODULE_TYPE"], 8)); };
+MatDrawerContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatDrawerContainer, selectors: [["mat-drawer-container"]], contentQueries: function MatDrawerContainer_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵcontentQuery"](dirIndex, MatDrawerContent, true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵcontentQuery"](dirIndex, MatDrawer, true);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._content = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._allDrawers = _t);
+    } }, viewQuery: function MatDrawerContainer_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵviewQuery"](MatDrawerContent, true);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._userContent = _t.first);
+    } }, hostAttrs: [1, "mat-drawer-container"], hostVars: 2, hostBindings: function MatDrawerContainer_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-container-explicit-backdrop", ctx._backdropOverride);
+    } }, inputs: { autosize: "autosize", hasBackdrop: "hasBackdrop" }, outputs: { backdropClick: "backdropClick" }, exportAs: ["matDrawerContainer"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([{
+                provide: MAT_DRAWER_CONTAINER,
+                useExisting: MatDrawerContainer
+            }])], ngContentSelectors: _c2, decls: 4, vars: 2, consts: [["class", "mat-drawer-backdrop", 3, "mat-drawer-shown", "click", 4, "ngIf"], [4, "ngIf"], [1, "mat-drawer-backdrop", 3, "click"]], template: function MatDrawerContainer_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"](_c1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, MatDrawerContainer_div_0_Template, 1, 2, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, MatDrawerContainer_mat_drawer_content_3_Template, 2, 0, "mat-drawer-content", 1);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.hasBackdrop);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx._content);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], MatDrawerContent], styles: [_c5], encapsulation: 2, changeDetection: 0 });
+MatDrawerContainer.ctorParameters = () => [
+    { type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__["Directionality"], decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
+    { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ViewportRuler"] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [MAT_DRAWER_DEFAULT_AUTOSIZE,] }] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["ANIMATION_MODULE_TYPE"],] }] }
+];
+MatDrawerContainer.propDecorators = {
+    _allDrawers: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChildren"], args: [MatDrawer, {
+                    // We need to use `descendants: true`, because Ivy will no longer match
+                    // indirect descendants if it's left as false.
+                    descendants: true
+                },] }],
+    _content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChild"], args: [MatDrawerContent,] }],
+    _userContent: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: [MatDrawerContent,] }],
+    autosize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    hasBackdrop: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    backdropClick: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatDrawerContainer, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-drawer-container',
+                exportAs: 'matDrawerContainer',
+                template: "<div class=\"mat-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.mat-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"mat-drawer\"></ng-content>\n\n<ng-content select=\"mat-drawer-content\">\n</ng-content>\n<mat-drawer-content *ngIf=\"!_content\">\n  <ng-content></ng-content>\n</mat-drawer-content>\n",
+                host: {
+                    'class': 'mat-drawer-container',
+                    '[class.mat-drawer-container-explicit-backdrop]': '_backdropOverride'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None,
+                providers: [{
+                        provide: MAT_DRAWER_CONTAINER,
+                        useExisting: MatDrawerContainer
+                    }],
+                styles: [".mat-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.mat-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.mat-drawer-container[fullscreen].mat-drawer-container-has-open{overflow:hidden}.mat-drawer-container.mat-drawer-container-explicit-backdrop .mat-drawer-side{z-index:3}.mat-drawer-container.ng-animate-disabled .mat-drawer-backdrop,.mat-drawer-container.ng-animate-disabled .mat-drawer-content,.ng-animate-disabled .mat-drawer-container .mat-drawer-backdrop,.ng-animate-disabled .mat-drawer-container .mat-drawer-content{transition:none}.mat-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.mat-drawer-backdrop.mat-drawer-shown{visibility:visible}.mat-drawer-transition .mat-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .mat-drawer-backdrop{opacity:.5}.mat-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.mat-drawer-transition .mat-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.mat-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .mat-drawer,.cdk-high-contrast-active [dir=rtl] .mat-drawer.mat-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .mat-drawer,.cdk-high-contrast-active .mat-drawer.mat-drawer-end{border-left:solid 1px currentColor;border-right:none}.mat-drawer.mat-drawer-side{z-index:2}.mat-drawer.mat-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer.mat-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.mat-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.mat-sidenav-fixed{position:fixed}\n"]
+            }]
+    }], function () { return [{ type: _angular_cdk_bidi__WEBPACK_IMPORTED_MODULE_6__["Directionality"], decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] }, { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ViewportRuler"] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [MAT_DRAWER_DEFAULT_AUTOSIZE]
+            }] }, { type: String, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Optional"]
+            }, {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_12__["ANIMATION_MODULE_TYPE"]]
+            }] }]; }, { backdropClick: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Output"]
+        }], autosize: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], hasBackdrop: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], _allDrawers: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChildren"],
+            args: [MatDrawer, {
+                    // We need to use `descendants: true`, because Ivy will no longer match
+                    // indirect descendants if it's left as false.
+                    descendants: true
+                }]
+        }], _content: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChild"],
+            args: [MatDrawerContent]
+        }], _userContent: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"],
+            args: [MatDrawerContent]
+        }] }); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+class MatSidenavContent extends MatDrawerContent {
+    constructor(changeDetectorRef, container, elementRef, scrollDispatcher, ngZone) {
+        super(changeDetectorRef, container, elementRef, scrollDispatcher, ngZone);
+    }
+}
+MatSidenavContent.ɵfac = function MatSidenavContent_Factory(t) { return new (t || MatSidenavContent)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatSidenavContainer)), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"])); };
+MatSidenavContent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatSidenavContent, selectors: [["mat-sidenav-content"]], hostAttrs: [1, "mat-drawer-content", "mat-sidenav-content"], hostVars: 4, hostBindings: function MatSidenavContent_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("margin-left", ctx._container._contentMargins.left, "px")("margin-right", ctx._container._contentMargins.right, "px");
+    } }, features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 1, vars: 0, template: function MatSidenavContent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](0);
+    } }, encapsulation: 2, changeDetection: 0 });
+MatSidenavContent.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] },
+    { type: MatSidenavContainer, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"], args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatSidenavContainer),] }] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] },
+    { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }
+];
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatSidenavContent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-sidenav-content',
+                template: '<ng-content></ng-content>',
+                host: {
+                    'class': 'mat-drawer-content mat-sidenav-content',
+                    '[style.margin-left.px]': '_container._contentMargins.left',
+                    '[style.margin-right.px]': '_container._contentMargins.right'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectorRef"] }, { type: MatSidenavContainer, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Inject"],
+                args: [Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["forwardRef"])(() => MatSidenavContainer)]
+            }] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ElementRef"] }, { type: _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["ScrollDispatcher"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgZone"] }]; }, null); })();
+class MatSidenav extends MatDrawer {
+    constructor() {
+        super(...arguments);
+        this._fixedInViewport = false;
+        this._fixedTopGap = 0;
+        this._fixedBottomGap = 0;
+    }
+    /** Whether the sidenav is fixed in the viewport. */
+    get fixedInViewport() { return this._fixedInViewport; }
+    set fixedInViewport(value) { this._fixedInViewport = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceBooleanProperty"])(value); }
+    /**
+     * The gap between the top of the sidenav and the top of the viewport when the sidenav is in fixed
+     * mode.
+     */
+    get fixedTopGap() { return this._fixedTopGap; }
+    set fixedTopGap(value) { this._fixedTopGap = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceNumberProperty"])(value); }
+    /**
+     * The gap between the bottom of the sidenav and the bottom of the viewport when the sidenav is in
+     * fixed mode.
+     */
+    get fixedBottomGap() { return this._fixedBottomGap; }
+    set fixedBottomGap(value) { this._fixedBottomGap = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_7__["coerceNumberProperty"])(value); }
+}
+MatSidenav.ɵfac = function MatSidenav_Factory(t) { return ɵMatSidenav_BaseFactory(t || MatSidenav); };
+MatSidenav.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatSidenav, selectors: [["mat-sidenav"]], hostAttrs: ["tabIndex", "-1", 1, "mat-drawer", "mat-sidenav"], hostVars: 17, hostBindings: function MatSidenav_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵattribute"]("align", null);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵstyleProp"]("top", ctx.fixedInViewport ? ctx.fixedTopGap : null, "px")("bottom", ctx.fixedInViewport ? ctx.fixedBottomGap : null, "px");
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-end", ctx.position === "end")("mat-drawer-over", ctx.mode === "over")("mat-drawer-push", ctx.mode === "push")("mat-drawer-side", ctx.mode === "side")("mat-drawer-opened", ctx.opened)("mat-sidenav-fixed", ctx.fixedInViewport);
+    } }, inputs: { fixedInViewport: "fixedInViewport", fixedTopGap: "fixedTopGap", fixedBottomGap: "fixedBottomGap" }, exportAs: ["matSidenav"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c0, decls: 2, vars: 0, consts: [["cdkScrollable", "", 1, "mat-drawer-inner-container"]], template: function MatSidenav_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
+    } }, directives: [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollable"]], encapsulation: 2, data: { animation: [matDrawerAnimations.transformDrawer] }, changeDetection: 0 });
+MatSidenav.propDecorators = {
+    fixedInViewport: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    fixedTopGap: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }],
+    fixedBottomGap: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
+};
+const ɵMatSidenav_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetInheritedFactory"](MatSidenav);
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatSidenav, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-sidenav',
+                exportAs: 'matSidenav',
+                template: "<div class=\"mat-drawer-inner-container\" cdkScrollable>\r\n  <ng-content></ng-content>\r\n</div>\r\n",
+                animations: [matDrawerAnimations.transformDrawer],
+                host: {
+                    'class': 'mat-drawer mat-sidenav',
+                    'tabIndex': '-1',
+                    // must prevent the browser from aligning text based on value
+                    '[attr.align]': 'null',
+                    '[class.mat-drawer-end]': 'position === "end"',
+                    '[class.mat-drawer-over]': 'mode === "over"',
+                    '[class.mat-drawer-push]': 'mode === "push"',
+                    '[class.mat-drawer-side]': 'mode === "side"',
+                    '[class.mat-drawer-opened]': 'opened',
+                    '[class.mat-sidenav-fixed]': 'fixedInViewport',
+                    '[style.top.px]': 'fixedInViewport ? fixedTopGap : null',
+                    '[style.bottom.px]': 'fixedInViewport ? fixedBottomGap : null'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None
+            }]
+    }], null, { fixedInViewport: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], fixedTopGap: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }], fixedBottomGap: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"]
+        }] }); })();
+class MatSidenavContainer extends MatDrawerContainer {
+}
+MatSidenavContainer.ɵfac = function MatSidenavContainer_Factory(t) { return ɵMatSidenavContainer_BaseFactory(t || MatSidenavContainer); };
+MatSidenavContainer.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MatSidenavContainer, selectors: [["mat-sidenav-container"]], contentQueries: function MatSidenavContainer_ContentQueries(rf, ctx, dirIndex) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵcontentQuery"](dirIndex, MatSidenavContent, true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵcontentQuery"](dirIndex, MatSidenav, true);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._content = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵloadQuery"]()) && (ctx._allDrawers = _t);
+    } }, hostAttrs: [1, "mat-drawer-container", "mat-sidenav-container"], hostVars: 2, hostBindings: function MatSidenavContainer_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵclassProp"]("mat-drawer-container-explicit-backdrop", ctx._backdropOverride);
+    } }, exportAs: ["matSidenavContainer"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵProvidersFeature"]([{
+                provide: MAT_DRAWER_CONTAINER,
+                useExisting: MatSidenavContainer
+            }]), _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c4, decls: 4, vars: 2, consts: [["class", "mat-drawer-backdrop", 3, "mat-drawer-shown", "click", 4, "ngIf"], ["cdkScrollable", "", 4, "ngIf"], [1, "mat-drawer-backdrop", 3, "click"], ["cdkScrollable", ""]], template: function MatSidenavContainer_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojectionDef"](_c3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](0, MatSidenavContainer_div_0_Template, 1, 2, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵprojection"](2, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtemplate"](3, MatSidenavContainer_mat_sidenav_content_3_Template, 2, 0, "mat-sidenav-content", 1);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", ctx.hasBackdrop);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵadvance"](3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵproperty"]("ngIf", !ctx._content);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgIf"], MatSidenavContent, _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollable"]], styles: [_c5], encapsulation: 2, changeDetection: 0 });
+MatSidenavContainer.propDecorators = {
+    _allDrawers: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChildren"], args: [MatSidenav, {
+                    // We need to use `descendants: true`, because Ivy will no longer match
+                    // indirect descendants if it's left as false.
+                    descendants: true
+                },] }],
+    _content: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChild"], args: [MatSidenavContent,] }]
+};
+const ɵMatSidenavContainer_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵgetInheritedFactory"](MatSidenavContainer);
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatSidenavContainer, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"],
+        args: [{
+                selector: 'mat-sidenav-container',
+                exportAs: 'matSidenavContainer',
+                template: "<div class=\"mat-drawer-backdrop\" (click)=\"_onBackdropClicked()\" *ngIf=\"hasBackdrop\"\n     [class.mat-drawer-shown]=\"_isShowingBackdrop()\"></div>\n\n<ng-content select=\"mat-sidenav\"></ng-content>\n\n<ng-content select=\"mat-sidenav-content\">\n</ng-content>\n<mat-sidenav-content *ngIf=\"!_content\" cdkScrollable>\n  <ng-content></ng-content>\n</mat-sidenav-content>\n",
+                host: {
+                    'class': 'mat-drawer-container mat-sidenav-container',
+                    '[class.mat-drawer-container-explicit-backdrop]': '_backdropOverride'
+                },
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ChangeDetectionStrategy"].OnPush,
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewEncapsulation"].None,
+                providers: [{
+                        provide: MAT_DRAWER_CONTAINER,
+                        useExisting: MatSidenavContainer
+                    }],
+                styles: [".mat-drawer-container{position:relative;z-index:1;box-sizing:border-box;-webkit-overflow-scrolling:touch;display:block;overflow:hidden}.mat-drawer-container[fullscreen]{top:0;left:0;right:0;bottom:0;position:absolute}.mat-drawer-container[fullscreen].mat-drawer-container-has-open{overflow:hidden}.mat-drawer-container.mat-drawer-container-explicit-backdrop .mat-drawer-side{z-index:3}.mat-drawer-container.ng-animate-disabled .mat-drawer-backdrop,.mat-drawer-container.ng-animate-disabled .mat-drawer-content,.ng-animate-disabled .mat-drawer-container .mat-drawer-backdrop,.ng-animate-disabled .mat-drawer-container .mat-drawer-content{transition:none}.mat-drawer-backdrop{top:0;left:0;right:0;bottom:0;position:absolute;display:block;z-index:3;visibility:hidden}.mat-drawer-backdrop.mat-drawer-shown{visibility:visible}.mat-drawer-transition .mat-drawer-backdrop{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:background-color,visibility}.cdk-high-contrast-active .mat-drawer-backdrop{opacity:.5}.mat-drawer-content{position:relative;z-index:1;display:block;height:100%;overflow:auto}.mat-drawer-transition .mat-drawer-content{transition-duration:400ms;transition-timing-function:cubic-bezier(0.25, 0.8, 0.25, 1);transition-property:transform,margin-left,margin-right}.mat-drawer{position:relative;z-index:4;display:block;position:absolute;top:0;bottom:0;z-index:3;outline:0;box-sizing:border-box;overflow-y:auto;transform:translate3d(-100%, 0, 0)}.cdk-high-contrast-active .mat-drawer,.cdk-high-contrast-active [dir=rtl] .mat-drawer.mat-drawer-end{border-right:solid 1px currentColor}.cdk-high-contrast-active [dir=rtl] .mat-drawer,.cdk-high-contrast-active .mat-drawer.mat-drawer-end{border-left:solid 1px currentColor;border-right:none}.mat-drawer.mat-drawer-side{z-index:2}.mat-drawer.mat-drawer-end{right:0;transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer{transform:translate3d(100%, 0, 0)}[dir=rtl] .mat-drawer.mat-drawer-end{left:0;right:auto;transform:translate3d(-100%, 0, 0)}.mat-drawer-inner-container{width:100%;height:100%;overflow:auto;-webkit-overflow-scrolling:touch}.mat-sidenav-fixed{position:fixed}\n"]
+            }]
+    }], null, { _allDrawers: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChildren"],
+            args: [MatSidenav, {
+                    // We need to use `descendants: true`, because Ivy will no longer match
+                    // indirect descendants if it's left as false.
+                    descendants: true
+                }]
+        }], _content: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ContentChild"],
+            args: [MatSidenavContent]
+        }] }); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+class MatSidenavModule {
+}
+MatSidenavModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineNgModule"]({ type: MatSidenavModule });
+MatSidenavModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineInjector"]({ factory: function MatSidenavModule_Factory(t) { return new (t || MatSidenavModule)(); }, imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+            _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"],
+            _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["PlatformModule"],
+            _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"],
+        ], _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"],
+        _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵsetNgModuleScope"](MatSidenavModule, { declarations: function () { return [MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenav, MatSidenavContainer, MatSidenavContent]; }, imports: function () { return [_angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+        _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"],
+        _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["PlatformModule"],
+        _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"]]; }, exports: function () { return [_angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"],
+        _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], MatDrawer, MatDrawerContainer, MatDrawerContent, MatSidenav, MatSidenavContainer, MatSidenavContent]; } }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵsetClassMetadata"](MatSidenavModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["NgModule"],
+        args: [{
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
+                    _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"],
+                    _angular_cdk_platform__WEBPACK_IMPORTED_MODULE_0__["PlatformModule"],
+                    _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"],
+                ],
+                exports: [
+                    _angular_cdk_scrolling__WEBPACK_IMPORTED_MODULE_1__["CdkScrollableModule"],
+                    _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"],
+                    MatDrawer,
+                    MatDrawerContainer,
+                    MatDrawerContent,
+                    MatSidenav,
+                    MatSidenavContainer,
+                    MatSidenavContent,
+                ],
+                declarations: [
+                    MatDrawer,
+                    MatDrawerContainer,
+                    MatDrawerContent,
+                    MatSidenav,
+                    MatSidenavContainer,
+                    MatSidenavContent,
+                ]
+            }]
+    }], null, null); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+//# sourceMappingURL=sidenav.js.map
+
+/***/ }),
+
 /***/ "XoHu":
 /*!**************************************************************!*\
   !*** ./node_modules/rxjs/_esm2015/internal/util/isObject.js ***!
@@ -23628,6 +24830,636 @@ function concatMap(project, resultSelector) {
     return Object(_mergeMap__WEBPACK_IMPORTED_MODULE_0__["mergeMap"])(project, resultSelector, 1);
 }
 //# sourceMappingURL=concatMap.js.map
+
+/***/ }),
+
+/***/ "bSwM":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@angular/material/__ivy_ngcc__/fesm2015/checkbox.js ***!
+  \**************************************************************************/
+/*! exports provided: MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR, MAT_CHECKBOX_DEFAULT_OPTIONS, MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY, MAT_CHECKBOX_REQUIRED_VALIDATOR, MatCheckbox, MatCheckboxChange, MatCheckboxModule, MatCheckboxRequiredValidator, _MatCheckboxRequiredValidatorModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR", function() { return MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_CHECKBOX_DEFAULT_OPTIONS", function() { return MAT_CHECKBOX_DEFAULT_OPTIONS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY", function() { return MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MAT_CHECKBOX_REQUIRED_VALIDATOR", function() { return MAT_CHECKBOX_REQUIRED_VALIDATOR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatCheckbox", function() { return MatCheckbox; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatCheckboxChange", function() { return MatCheckboxChange; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatCheckboxModule", function() { return MatCheckboxModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MatCheckboxRequiredValidator", function() { return MatCheckboxRequiredValidator; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_MatCheckboxRequiredValidatorModule", function() { return _MatCheckboxRequiredValidatorModule; });
+/* harmony import */ var _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/cdk/a11y */ "u47x");
+/* harmony import */ var _angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/cdk/coercion */ "8LU1");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "R1ws");
+/* harmony import */ var _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/cdk/observers */ "GU7r");
+
+
+
+
+
+
+
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/** Injection token to be used to override the default options for `mat-checkbox`. */
+
+
+
+
+
+const _c0 = ["input"];
+const _c1 = function () { return { enterDuration: 150 }; };
+const _c2 = ["*"];
+const MAT_CHECKBOX_DEFAULT_OPTIONS = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["InjectionToken"]('mat-checkbox-default-options', {
+    providedIn: 'root',
+    factory: MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY
+});
+/** @docs-private */
+function MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY() {
+    return {
+        color: 'accent',
+        clickAction: 'check-indeterminate',
+    };
+}
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+// Increasing integer for generating unique ids for checkbox components.
+let nextUniqueId = 0;
+// Default checkbox configuration.
+const defaults = MAT_CHECKBOX_DEFAULT_OPTIONS_FACTORY();
+/**
+ * Provider Expression that allows mat-checkbox to register as a ControlValueAccessor.
+ * This allows it to support [(ngModel)].
+ * @docs-private
+ */
+const MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR = {
+    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALUE_ACCESSOR"],
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(() => MatCheckbox),
+    multi: true
+};
+/** Change event object emitted by MatCheckbox. */
+class MatCheckboxChange {
+}
+// Boilerplate for applying mixins to MatCheckbox.
+/** @docs-private */
+class MatCheckboxBase {
+    constructor(_elementRef) {
+        this._elementRef = _elementRef;
+    }
+}
+const _MatCheckboxMixinBase = Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["mixinTabIndex"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["mixinColor"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["mixinDisableRipple"])(Object(_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["mixinDisabled"])(MatCheckboxBase))));
+/**
+ * A material design checkbox component. Supports all of the functionality of an HTML5 checkbox,
+ * and exposes a similar API. A MatCheckbox can be either checked, unchecked, indeterminate, or
+ * disabled. Note that all additional accessibility attributes are taken care of by the component,
+ * so there is no need to provide them yourself. However, if you want to omit a label and still
+ * have the checkbox be accessible, you may supply an [aria-label] input.
+ * See: https://material.io/design/components/selection-controls.html
+ */
+class MatCheckbox extends _MatCheckboxMixinBase {
+    constructor(elementRef, _changeDetectorRef, _focusMonitor, _ngZone, tabIndex, _animationMode, _options) {
+        super(elementRef);
+        this._changeDetectorRef = _changeDetectorRef;
+        this._focusMonitor = _focusMonitor;
+        this._ngZone = _ngZone;
+        this._animationMode = _animationMode;
+        this._options = _options;
+        /**
+         * Attached to the aria-label attribute of the host element. In most cases, aria-labelledby will
+         * take precedence so this may be omitted.
+         */
+        this.ariaLabel = '';
+        /**
+         * Users can specify the `aria-labelledby` attribute which will be forwarded to the input element
+         */
+        this.ariaLabelledby = null;
+        this._uniqueId = `mat-checkbox-${++nextUniqueId}`;
+        /** A unique id for the checkbox input. If none is supplied, it will be auto-generated. */
+        this.id = this._uniqueId;
+        /** Whether the label should appear after or before the checkbox. Defaults to 'after' */
+        this.labelPosition = 'after';
+        /** Name value will be applied to the input element if present */
+        this.name = null;
+        /** Event emitted when the checkbox's `checked` value changes. */
+        this.change = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        /** Event emitted when the checkbox's `indeterminate` value changes. */
+        this.indeterminateChange = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["EventEmitter"]();
+        /**
+         * Called when the checkbox is blurred. Needed to properly implement ControlValueAccessor.
+         * @docs-private
+         */
+        this._onTouched = () => { };
+        this._currentAnimationClass = '';
+        this._currentCheckState = 0 /* Init */;
+        this._controlValueAccessorChangeFn = () => { };
+        this._checked = false;
+        this._disabled = false;
+        this._indeterminate = false;
+        this._options = this._options || defaults;
+        this.color = this.defaultColor = this._options.color || defaults.color;
+        this.tabIndex = parseInt(tabIndex) || 0;
+    }
+    /** Returns the unique id for the visual hidden input. */
+    get inputId() { return `${this.id || this._uniqueId}-input`; }
+    /** Whether the checkbox is required. */
+    get required() { return this._required; }
+    set required(value) { this._required = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__["coerceBooleanProperty"])(value); }
+    ngAfterViewInit() {
+        this._focusMonitor.monitor(this._elementRef, true).subscribe(focusOrigin => {
+            if (!focusOrigin) {
+                // When a focused element becomes disabled, the browser *immediately* fires a blur event.
+                // Angular does not expect events to be raised during change detection, so any state change
+                // (such as a form control's 'ng-touched') will cause a changed-after-checked error.
+                // See https://github.com/angular/angular/issues/17793. To work around this, we defer
+                // telling the form control it has been touched until the next tick.
+                Promise.resolve().then(() => {
+                    this._onTouched();
+                    this._changeDetectorRef.markForCheck();
+                });
+            }
+        });
+        this._syncIndeterminate(this._indeterminate);
+    }
+    // TODO: Delete next major revision.
+    ngAfterViewChecked() { }
+    ngOnDestroy() {
+        this._focusMonitor.stopMonitoring(this._elementRef);
+    }
+    /**
+     * Whether the checkbox is checked.
+     */
+    get checked() { return this._checked; }
+    set checked(value) {
+        if (value != this.checked) {
+            this._checked = value;
+            this._changeDetectorRef.markForCheck();
+        }
+    }
+    /**
+     * Whether the checkbox is disabled. This fully overrides the implementation provided by
+     * mixinDisabled, but the mixin is still required because mixinTabIndex requires it.
+     */
+    get disabled() { return this._disabled; }
+    set disabled(value) {
+        const newValue = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__["coerceBooleanProperty"])(value);
+        if (newValue !== this.disabled) {
+            this._disabled = newValue;
+            this._changeDetectorRef.markForCheck();
+        }
+    }
+    /**
+     * Whether the checkbox is indeterminate. This is also known as "mixed" mode and can be used to
+     * represent a checkbox with three states, e.g. a checkbox that represents a nested list of
+     * checkable items. Note that whenever checkbox is manually clicked, indeterminate is immediately
+     * set to false.
+     */
+    get indeterminate() { return this._indeterminate; }
+    set indeterminate(value) {
+        const changed = value != this._indeterminate;
+        this._indeterminate = Object(_angular_cdk_coercion__WEBPACK_IMPORTED_MODULE_1__["coerceBooleanProperty"])(value);
+        if (changed) {
+            if (this._indeterminate) {
+                this._transitionCheckState(3 /* Indeterminate */);
+            }
+            else {
+                this._transitionCheckState(this.checked ? 1 /* Checked */ : 2 /* Unchecked */);
+            }
+            this.indeterminateChange.emit(this._indeterminate);
+        }
+        this._syncIndeterminate(this._indeterminate);
+    }
+    _isRippleDisabled() {
+        return this.disableRipple || this.disabled;
+    }
+    /** Method being called whenever the label text changes. */
+    _onLabelTextChange() {
+        // Since the event of the `cdkObserveContent` directive runs outside of the zone, the checkbox
+        // component will be only marked for check, but no actual change detection runs automatically.
+        // Instead of going back into the zone in order to trigger a change detection which causes
+        // *all* components to be checked (if explicitly marked or not using OnPush), we only trigger
+        // an explicit change detection for the checkbox view and its children.
+        this._changeDetectorRef.detectChanges();
+    }
+    // Implemented as part of ControlValueAccessor.
+    writeValue(value) {
+        this.checked = !!value;
+    }
+    // Implemented as part of ControlValueAccessor.
+    registerOnChange(fn) {
+        this._controlValueAccessorChangeFn = fn;
+    }
+    // Implemented as part of ControlValueAccessor.
+    registerOnTouched(fn) {
+        this._onTouched = fn;
+    }
+    // Implemented as part of ControlValueAccessor.
+    setDisabledState(isDisabled) {
+        this.disabled = isDisabled;
+    }
+    _getAriaChecked() {
+        if (this.checked) {
+            return 'true';
+        }
+        return this.indeterminate ? 'mixed' : 'false';
+    }
+    _transitionCheckState(newState) {
+        let oldState = this._currentCheckState;
+        let element = this._elementRef.nativeElement;
+        if (oldState === newState) {
+            return;
+        }
+        if (this._currentAnimationClass.length > 0) {
+            element.classList.remove(this._currentAnimationClass);
+        }
+        this._currentAnimationClass = this._getAnimationClassForCheckStateTransition(oldState, newState);
+        this._currentCheckState = newState;
+        if (this._currentAnimationClass.length > 0) {
+            element.classList.add(this._currentAnimationClass);
+            // Remove the animation class to avoid animation when the checkbox is moved between containers
+            const animationClass = this._currentAnimationClass;
+            this._ngZone.runOutsideAngular(() => {
+                setTimeout(() => {
+                    element.classList.remove(animationClass);
+                }, 1000);
+            });
+        }
+    }
+    _emitChangeEvent() {
+        const event = new MatCheckboxChange();
+        event.source = this;
+        event.checked = this.checked;
+        this._controlValueAccessorChangeFn(this.checked);
+        this.change.emit(event);
+        // Assigning the value again here is redundant, but we have to do it in case it was
+        // changed inside the `change` listener which will cause the input to be out of sync.
+        if (this._inputElement) {
+            this._inputElement.nativeElement.checked = this.checked;
+        }
+    }
+    /** Toggles the `checked` state of the checkbox. */
+    toggle() {
+        this.checked = !this.checked;
+    }
+    /**
+     * Event handler for checkbox input element.
+     * Toggles checked state if element is not disabled.
+     * Do not toggle on (change) event since IE doesn't fire change event when
+     *   indeterminate checkbox is clicked.
+     * @param event
+     */
+    _onInputClick(event) {
+        var _a;
+        const clickAction = (_a = this._options) === null || _a === void 0 ? void 0 : _a.clickAction;
+        // We have to stop propagation for click events on the visual hidden input element.
+        // By default, when a user clicks on a label element, a generated click event will be
+        // dispatched on the associated input element. Since we are using a label element as our
+        // root container, the click event on the `checkbox` will be executed twice.
+        // The real click event will bubble up, and the generated click event also tries to bubble up.
+        // This will lead to multiple click events.
+        // Preventing bubbling for the second event will solve that issue.
+        event.stopPropagation();
+        // If resetIndeterminate is false, and the current state is indeterminate, do nothing on click
+        if (!this.disabled && clickAction !== 'noop') {
+            // When user manually click on the checkbox, `indeterminate` is set to false.
+            if (this.indeterminate && clickAction !== 'check') {
+                Promise.resolve().then(() => {
+                    this._indeterminate = false;
+                    this.indeterminateChange.emit(this._indeterminate);
+                });
+            }
+            this.toggle();
+            this._transitionCheckState(this._checked ? 1 /* Checked */ : 2 /* Unchecked */);
+            // Emit our custom change event if the native input emitted one.
+            // It is important to only emit it, if the native input triggered one, because
+            // we don't want to trigger a change event, when the `checked` variable changes for example.
+            this._emitChangeEvent();
+        }
+        else if (!this.disabled && clickAction === 'noop') {
+            // Reset native input when clicked with noop. The native checkbox becomes checked after
+            // click, reset it to be align with `checked` value of `mat-checkbox`.
+            this._inputElement.nativeElement.checked = this.checked;
+            this._inputElement.nativeElement.indeterminate = this.indeterminate;
+        }
+    }
+    /** Focuses the checkbox. */
+    focus(origin, options) {
+        if (origin) {
+            this._focusMonitor.focusVia(this._inputElement, origin, options);
+        }
+        else {
+            this._inputElement.nativeElement.focus(options);
+        }
+    }
+    _onInteractionEvent(event) {
+        // We always have to stop propagation on the change event.
+        // Otherwise the change event, from the input element, will bubble up and
+        // emit its event object to the `change` output.
+        event.stopPropagation();
+    }
+    _getAnimationClassForCheckStateTransition(oldState, newState) {
+        // Don't transition if animations are disabled.
+        if (this._animationMode === 'NoopAnimations') {
+            return '';
+        }
+        let animSuffix = '';
+        switch (oldState) {
+            case 0 /* Init */:
+                // Handle edge case where user interacts with checkbox that does not have [(ngModel)] or
+                // [checked] bound to it.
+                if (newState === 1 /* Checked */) {
+                    animSuffix = 'unchecked-checked';
+                }
+                else if (newState == 3 /* Indeterminate */) {
+                    animSuffix = 'unchecked-indeterminate';
+                }
+                else {
+                    return '';
+                }
+                break;
+            case 2 /* Unchecked */:
+                animSuffix = newState === 1 /* Checked */ ?
+                    'unchecked-checked' : 'unchecked-indeterminate';
+                break;
+            case 1 /* Checked */:
+                animSuffix = newState === 2 /* Unchecked */ ?
+                    'checked-unchecked' : 'checked-indeterminate';
+                break;
+            case 3 /* Indeterminate */:
+                animSuffix = newState === 1 /* Checked */ ?
+                    'indeterminate-checked' : 'indeterminate-unchecked';
+                break;
+        }
+        return `mat-checkbox-anim-${animSuffix}`;
+    }
+    /**
+     * Syncs the indeterminate value with the checkbox DOM node.
+     *
+     * We sync `indeterminate` directly on the DOM node, because in Ivy the check for whether a
+     * property is supported on an element boils down to `if (propName in element)`. Domino's
+     * HTMLInputElement doesn't have an `indeterminate` property so Ivy will warn during
+     * server-side rendering.
+     */
+    _syncIndeterminate(value) {
+        const nativeCheckbox = this._inputElement;
+        if (nativeCheckbox) {
+            nativeCheckbox.nativeElement.indeterminate = value;
+        }
+    }
+}
+MatCheckbox.ɵfac = function MatCheckbox_Factory(t) { return new (t || MatCheckbox)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgZone"]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵinjectAttribute"]('tabindex'), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["ANIMATION_MODULE_TYPE"], 8), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](MAT_CHECKBOX_DEFAULT_OPTIONS, 8)); };
+MatCheckbox.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: MatCheckbox, selectors: [["mat-checkbox"]], viewQuery: function MatCheckbox_Query(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_c0, true);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵviewQuery"](_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRipple"], true);
+    } if (rf & 2) {
+        let _t;
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx._inputElement = _t.first);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵqueryRefresh"](_t = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵloadQuery"]()) && (ctx.ripple = _t.first);
+    } }, hostAttrs: [1, "mat-checkbox"], hostVars: 12, hostBindings: function MatCheckbox_HostBindings(rf, ctx) { if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵhostProperty"]("id", ctx.id);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("tabindex", null);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("mat-checkbox-indeterminate", ctx.indeterminate)("mat-checkbox-checked", ctx.checked)("mat-checkbox-disabled", ctx.disabled)("mat-checkbox-label-before", ctx.labelPosition == "before")("_mat-animation-noopable", ctx._animationMode === "NoopAnimations");
+    } }, inputs: { disableRipple: "disableRipple", color: "color", tabIndex: "tabIndex", ariaLabel: ["aria-label", "ariaLabel"], ariaLabelledby: ["aria-labelledby", "ariaLabelledby"], id: "id", labelPosition: "labelPosition", name: "name", required: "required", checked: "checked", disabled: "disabled", indeterminate: "indeterminate", ariaDescribedby: ["aria-describedby", "ariaDescribedby"], value: "value" }, outputs: { change: "change", indeterminateChange: "indeterminateChange" }, exportAs: ["matCheckbox"], features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]], ngContentSelectors: _c2, decls: 17, vars: 20, consts: [[1, "mat-checkbox-layout"], ["label", ""], [1, "mat-checkbox-inner-container"], ["type", "checkbox", 1, "mat-checkbox-input", "cdk-visually-hidden", 3, "id", "required", "checked", "disabled", "tabIndex", "change", "click"], ["input", ""], ["matRipple", "", 1, "mat-checkbox-ripple", "mat-focus-indicator", 3, "matRippleTrigger", "matRippleDisabled", "matRippleRadius", "matRippleCentered", "matRippleAnimation"], [1, "mat-ripple-element", "mat-checkbox-persistent-ripple"], [1, "mat-checkbox-frame"], [1, "mat-checkbox-background"], ["version", "1.1", "focusable", "false", "viewBox", "0 0 24 24", 0, "xml", "space", "preserve", 1, "mat-checkbox-checkmark"], ["fill", "none", "stroke", "white", "d", "M4.1,12.7 9,17.6 20.3,6.3", 1, "mat-checkbox-checkmark-path"], [1, "mat-checkbox-mixedmark"], [1, "mat-checkbox-label", 3, "cdkObserveContent"], ["checkboxLabel", ""], [2, "display", "none"]], template: function MatCheckbox_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "label", 0, 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](2, "span", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](3, "input", 3, 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("change", function MatCheckbox_Template_input_change_3_listener($event) { return ctx._onInteractionEvent($event); })("click", function MatCheckbox_Template_input_click_3_listener($event) { return ctx._onInputClick($event); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](5, "span", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](6, "span", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](7, "span", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](8, "span", 8);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnamespaceSVG"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](9, "svg", 9);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](10, "path", 10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵnamespaceHTML"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](11, "span", 11);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](12, "span", 12, 13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵlistener"]("cdkObserveContent", function MatCheckbox_Template_span_cdkObserveContent_12_listener() { return ctx._onLabelTextChange(); });
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](14, "span", 14);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtext"](15, "\u00A0");
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵprojection"](16);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        const _r0 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](1);
+        const _r2 = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵreference"](13);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("for", ctx.inputId);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵclassProp"]("mat-checkbox-inner-container-no-side-margin", !_r2.textContent || !_r2.textContent.trim());
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("id", ctx.inputId)("required", ctx.required)("checked", ctx.checked)("disabled", ctx.disabled)("tabIndex", ctx.tabIndex);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵattribute"]("value", ctx.value)("name", ctx.name)("aria-label", ctx.ariaLabel || null)("aria-labelledby", ctx.ariaLabelledby)("aria-checked", ctx._getAriaChecked())("aria-describedby", ctx.ariaDescribedby);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("matRippleTrigger", _r0)("matRippleDisabled", ctx._isRippleDisabled())("matRippleRadius", 20)("matRippleCentered", true)("matRippleAnimation", _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵpureFunction0"](19, _c1));
+    } }, directives: [_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRipple"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_6__["CdkObserveContent"]], styles: ["@keyframes mat-checkbox-fade-in-background{0%{opacity:0}50%{opacity:1}}@keyframes mat-checkbox-fade-out-background{0%,50%{opacity:1}100%{opacity:0}}@keyframes mat-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:22.910259}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1)}100%{stroke-dashoffset:0}}@keyframes mat-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mat-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);stroke-dashoffset:0}to{stroke-dashoffset:-22.910259}}@keyframes mat-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1);opacity:1;transform:rotate(0deg)}to{opacity:0;transform:rotate(45deg)}}@keyframes mat-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);opacity:0;transform:rotate(45deg)}to{opacity:1;transform:rotate(360deg)}}@keyframes mat-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1);opacity:0;transform:rotate(-45deg)}to{opacity:1;transform:rotate(0deg)}}@keyframes mat-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);opacity:1;transform:rotate(0deg)}to{opacity:0;transform:rotate(315deg)}}@keyframes mat-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;opacity:1;transform:scaleX(1)}32.8%,100%{opacity:0;transform:scaleX(0)}}.mat-checkbox-background,.mat-checkbox-frame{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:2px;box-sizing:border-box;pointer-events:none}.mat-checkbox{display:inline-block;transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);cursor:pointer;-webkit-tap-highlight-color:transparent}._mat-animation-noopable.mat-checkbox{transition:none;animation:none}.mat-checkbox .mat-ripple-element:not(.mat-checkbox-persistent-ripple){opacity:.16}.mat-checkbox-layout{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:inherit;align-items:baseline;vertical-align:middle;display:inline-flex;white-space:nowrap}.mat-checkbox-label{-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto}.mat-checkbox-inner-container{display:inline-block;height:16px;line-height:0;margin:auto;margin-right:8px;order:0;position:relative;vertical-align:middle;white-space:nowrap;width:16px;flex-shrink:0}[dir=rtl] .mat-checkbox-inner-container{margin-left:8px;margin-right:auto}.mat-checkbox-inner-container-no-side-margin{margin-left:0;margin-right:0}.mat-checkbox-frame{background-color:transparent;transition:border-color 90ms cubic-bezier(0, 0, 0.2, 0.1);border-width:2px;border-style:solid}._mat-animation-noopable .mat-checkbox-frame{transition:none}.cdk-high-contrast-active .mat-checkbox.cdk-keyboard-focused .mat-checkbox-frame{border-style:dotted}.mat-checkbox-background{align-items:center;display:inline-flex;justify-content:center;transition:background-color 90ms cubic-bezier(0, 0, 0.2, 0.1),opacity 90ms cubic-bezier(0, 0, 0.2, 0.1);-webkit-print-color-adjust:exact;color-adjust:exact}._mat-animation-noopable .mat-checkbox-background{transition:none}.cdk-high-contrast-active .mat-checkbox .mat-checkbox-background{background:none}.mat-checkbox-persistent-ripple{display:block;width:100%;height:100%;transform:none}.mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{opacity:.04}.mat-checkbox.cdk-keyboard-focused .mat-checkbox-persistent-ripple{opacity:.12}.mat-checkbox-persistent-ripple,.mat-checkbox.mat-checkbox-disabled .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{opacity:0}@media(hover: none){.mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{display:none}}.mat-checkbox-checkmark{top:0;left:0;right:0;bottom:0;position:absolute;width:100%}.mat-checkbox-checkmark-path{stroke-dashoffset:22.910259;stroke-dasharray:22.910259;stroke-width:2.1333333333px}.cdk-high-contrast-black-on-white .mat-checkbox-checkmark-path{stroke:#000 !important}.mat-checkbox-mixedmark{width:calc(100% - 6px);height:2px;opacity:0;transform:scaleX(0) rotate(0deg);border-radius:2px}.cdk-high-contrast-active .mat-checkbox-mixedmark{height:0;border-top:solid 2px;margin-top:2px}.mat-checkbox-label-before .mat-checkbox-inner-container{order:1;margin-left:8px;margin-right:auto}[dir=rtl] .mat-checkbox-label-before .mat-checkbox-inner-container{margin-left:auto;margin-right:8px}.mat-checkbox-checked .mat-checkbox-checkmark{opacity:1}.mat-checkbox-checked .mat-checkbox-checkmark-path{stroke-dashoffset:0}.mat-checkbox-checked .mat-checkbox-mixedmark{transform:scaleX(1) rotate(-45deg)}.mat-checkbox-indeterminate .mat-checkbox-checkmark{opacity:0;transform:rotate(45deg)}.mat-checkbox-indeterminate .mat-checkbox-checkmark-path{stroke-dashoffset:0}.mat-checkbox-indeterminate .mat-checkbox-mixedmark{opacity:1;transform:scaleX(1) rotate(0deg)}.mat-checkbox-unchecked .mat-checkbox-background{background-color:transparent}.mat-checkbox-disabled{cursor:default}.cdk-high-contrast-active .mat-checkbox-disabled{opacity:.5}.mat-checkbox-anim-unchecked-checked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-in-background}.mat-checkbox-anim-unchecked-checked .mat-checkbox-checkmark-path{animation:180ms linear 0ms mat-checkbox-unchecked-checked-checkmark-path}.mat-checkbox-anim-unchecked-indeterminate .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-in-background}.mat-checkbox-anim-unchecked-indeterminate .mat-checkbox-mixedmark{animation:90ms linear 0ms mat-checkbox-unchecked-indeterminate-mixedmark}.mat-checkbox-anim-checked-unchecked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-out-background}.mat-checkbox-anim-checked-unchecked .mat-checkbox-checkmark-path{animation:90ms linear 0ms mat-checkbox-checked-unchecked-checkmark-path}.mat-checkbox-anim-checked-indeterminate .mat-checkbox-checkmark{animation:90ms linear 0ms mat-checkbox-checked-indeterminate-checkmark}.mat-checkbox-anim-checked-indeterminate .mat-checkbox-mixedmark{animation:90ms linear 0ms mat-checkbox-checked-indeterminate-mixedmark}.mat-checkbox-anim-indeterminate-checked .mat-checkbox-checkmark{animation:500ms linear 0ms mat-checkbox-indeterminate-checked-checkmark}.mat-checkbox-anim-indeterminate-checked .mat-checkbox-mixedmark{animation:500ms linear 0ms mat-checkbox-indeterminate-checked-mixedmark}.mat-checkbox-anim-indeterminate-unchecked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-out-background}.mat-checkbox-anim-indeterminate-unchecked .mat-checkbox-mixedmark{animation:300ms linear 0ms mat-checkbox-indeterminate-unchecked-mixedmark}.mat-checkbox-input{bottom:0;left:50%}.mat-checkbox .mat-checkbox-ripple{position:absolute;left:calc(50% - 20px);top:calc(50% - 20px);height:40px;width:40px;z-index:1;pointer-events:none}\n"], encapsulation: 2, changeDetection: 0 });
+MatCheckbox.ctorParameters = () => [
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"] },
+    { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"] },
+    { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgZone"] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Attribute"], args: ['tabindex',] }] },
+    { type: String, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"], args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["ANIMATION_MODULE_TYPE"],] }] },
+    { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"], args: [MAT_CHECKBOX_DEFAULT_OPTIONS,] }] }
+];
+MatCheckbox.propDecorators = {
+    ariaLabel: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"], args: ['aria-label',] }],
+    ariaLabelledby: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"], args: ['aria-labelledby',] }],
+    ariaDescribedby: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"], args: ['aria-describedby',] }],
+    id: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    required: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    labelPosition: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    name: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    change: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+    indeterminateChange: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"] }],
+    value: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    _inputElement: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: ['input',] }],
+    ripple: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"], args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRipple"],] }],
+    checked: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    disabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }],
+    indeterminate: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"] }]
+};
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](MatCheckbox, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Component"],
+        args: [{
+                selector: 'mat-checkbox',
+                template: "<label [attr.for]=\"inputId\" class=\"mat-checkbox-layout\" #label>\n  <span class=\"mat-checkbox-inner-container\"\n       [class.mat-checkbox-inner-container-no-side-margin]=\"!checkboxLabel.textContent || !checkboxLabel.textContent.trim()\">\n    <input #input\n           class=\"mat-checkbox-input cdk-visually-hidden\" type=\"checkbox\"\n           [id]=\"inputId\"\n           [required]=\"required\"\n           [checked]=\"checked\"\n           [attr.value]=\"value\"\n           [disabled]=\"disabled\"\n           [attr.name]=\"name\"\n           [tabIndex]=\"tabIndex\"\n           [attr.aria-label]=\"ariaLabel || null\"\n           [attr.aria-labelledby]=\"ariaLabelledby\"\n           [attr.aria-checked]=\"_getAriaChecked()\"\n           [attr.aria-describedby]=\"ariaDescribedby\"\n           (change)=\"_onInteractionEvent($event)\"\n           (click)=\"_onInputClick($event)\">\n    <span matRipple class=\"mat-checkbox-ripple mat-focus-indicator\"\n         [matRippleTrigger]=\"label\"\n         [matRippleDisabled]=\"_isRippleDisabled()\"\n         [matRippleRadius]=\"20\"\n         [matRippleCentered]=\"true\"\n         [matRippleAnimation]=\"{enterDuration: 150}\">\n      <span class=\"mat-ripple-element mat-checkbox-persistent-ripple\"></span>\n    </span>\n    <span class=\"mat-checkbox-frame\"></span>\n    <span class=\"mat-checkbox-background\">\n      <svg version=\"1.1\"\n           focusable=\"false\"\n           class=\"mat-checkbox-checkmark\"\n           viewBox=\"0 0 24 24\"\n           xml:space=\"preserve\">\n        <path class=\"mat-checkbox-checkmark-path\"\n              fill=\"none\"\n              stroke=\"white\"\n              d=\"M4.1,12.7 9,17.6 20.3,6.3\"/>\n      </svg>\n      <!-- Element for rendering the indeterminate state checkbox. -->\n      <span class=\"mat-checkbox-mixedmark\"></span>\n    </span>\n  </span>\n  <span class=\"mat-checkbox-label\" #checkboxLabel (cdkObserveContent)=\"_onLabelTextChange()\">\n    <!-- Add an invisible span so JAWS can read the label -->\n    <span style=\"display:none\">&nbsp;</span>\n    <ng-content></ng-content>\n  </span>\n</label>\n",
+                exportAs: 'matCheckbox',
+                host: {
+                    'class': 'mat-checkbox',
+                    '[id]': 'id',
+                    '[attr.tabindex]': 'null',
+                    '[class.mat-checkbox-indeterminate]': 'indeterminate',
+                    '[class.mat-checkbox-checked]': 'checked',
+                    '[class.mat-checkbox-disabled]': 'disabled',
+                    '[class.mat-checkbox-label-before]': 'labelPosition == "before"',
+                    '[class._mat-animation-noopable]': `_animationMode === 'NoopAnimations'`
+                },
+                providers: [MAT_CHECKBOX_CONTROL_VALUE_ACCESSOR],
+                inputs: ['disableRipple', 'color', 'tabIndex'],
+                encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewEncapsulation"].None,
+                changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectionStrategy"].OnPush,
+                styles: ["@keyframes mat-checkbox-fade-in-background{0%{opacity:0}50%{opacity:1}}@keyframes mat-checkbox-fade-out-background{0%,50%{opacity:1}100%{opacity:0}}@keyframes mat-checkbox-unchecked-checked-checkmark-path{0%,50%{stroke-dashoffset:22.910259}50%{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1)}100%{stroke-dashoffset:0}}@keyframes mat-checkbox-unchecked-indeterminate-mixedmark{0%,68.2%{transform:scaleX(0)}68.2%{animation-timing-function:cubic-bezier(0, 0, 0, 1)}100%{transform:scaleX(1)}}@keyframes mat-checkbox-checked-unchecked-checkmark-path{from{animation-timing-function:cubic-bezier(0.4, 0, 1, 1);stroke-dashoffset:0}to{stroke-dashoffset:-22.910259}}@keyframes mat-checkbox-checked-indeterminate-checkmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1);opacity:1;transform:rotate(0deg)}to{opacity:0;transform:rotate(45deg)}}@keyframes mat-checkbox-indeterminate-checked-checkmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);opacity:0;transform:rotate(45deg)}to{opacity:1;transform:rotate(360deg)}}@keyframes mat-checkbox-checked-indeterminate-mixedmark{from{animation-timing-function:cubic-bezier(0, 0, 0.2, 0.1);opacity:0;transform:rotate(-45deg)}to{opacity:1;transform:rotate(0deg)}}@keyframes mat-checkbox-indeterminate-checked-mixedmark{from{animation-timing-function:cubic-bezier(0.14, 0, 0, 1);opacity:1;transform:rotate(0deg)}to{opacity:0;transform:rotate(315deg)}}@keyframes mat-checkbox-indeterminate-unchecked-mixedmark{0%{animation-timing-function:linear;opacity:1;transform:scaleX(1)}32.8%,100%{opacity:0;transform:scaleX(0)}}.mat-checkbox-background,.mat-checkbox-frame{top:0;left:0;right:0;bottom:0;position:absolute;border-radius:2px;box-sizing:border-box;pointer-events:none}.mat-checkbox{display:inline-block;transition:background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);cursor:pointer;-webkit-tap-highlight-color:transparent}._mat-animation-noopable.mat-checkbox{transition:none;animation:none}.mat-checkbox .mat-ripple-element:not(.mat-checkbox-persistent-ripple){opacity:.16}.mat-checkbox-layout{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:inherit;align-items:baseline;vertical-align:middle;display:inline-flex;white-space:nowrap}.mat-checkbox-label{-webkit-user-select:auto;-moz-user-select:auto;-ms-user-select:auto;user-select:auto}.mat-checkbox-inner-container{display:inline-block;height:16px;line-height:0;margin:auto;margin-right:8px;order:0;position:relative;vertical-align:middle;white-space:nowrap;width:16px;flex-shrink:0}[dir=rtl] .mat-checkbox-inner-container{margin-left:8px;margin-right:auto}.mat-checkbox-inner-container-no-side-margin{margin-left:0;margin-right:0}.mat-checkbox-frame{background-color:transparent;transition:border-color 90ms cubic-bezier(0, 0, 0.2, 0.1);border-width:2px;border-style:solid}._mat-animation-noopable .mat-checkbox-frame{transition:none}.cdk-high-contrast-active .mat-checkbox.cdk-keyboard-focused .mat-checkbox-frame{border-style:dotted}.mat-checkbox-background{align-items:center;display:inline-flex;justify-content:center;transition:background-color 90ms cubic-bezier(0, 0, 0.2, 0.1),opacity 90ms cubic-bezier(0, 0, 0.2, 0.1);-webkit-print-color-adjust:exact;color-adjust:exact}._mat-animation-noopable .mat-checkbox-background{transition:none}.cdk-high-contrast-active .mat-checkbox .mat-checkbox-background{background:none}.mat-checkbox-persistent-ripple{display:block;width:100%;height:100%;transform:none}.mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{opacity:.04}.mat-checkbox.cdk-keyboard-focused .mat-checkbox-persistent-ripple{opacity:.12}.mat-checkbox-persistent-ripple,.mat-checkbox.mat-checkbox-disabled .mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{opacity:0}@media(hover: none){.mat-checkbox-inner-container:hover .mat-checkbox-persistent-ripple{display:none}}.mat-checkbox-checkmark{top:0;left:0;right:0;bottom:0;position:absolute;width:100%}.mat-checkbox-checkmark-path{stroke-dashoffset:22.910259;stroke-dasharray:22.910259;stroke-width:2.1333333333px}.cdk-high-contrast-black-on-white .mat-checkbox-checkmark-path{stroke:#000 !important}.mat-checkbox-mixedmark{width:calc(100% - 6px);height:2px;opacity:0;transform:scaleX(0) rotate(0deg);border-radius:2px}.cdk-high-contrast-active .mat-checkbox-mixedmark{height:0;border-top:solid 2px;margin-top:2px}.mat-checkbox-label-before .mat-checkbox-inner-container{order:1;margin-left:8px;margin-right:auto}[dir=rtl] .mat-checkbox-label-before .mat-checkbox-inner-container{margin-left:auto;margin-right:8px}.mat-checkbox-checked .mat-checkbox-checkmark{opacity:1}.mat-checkbox-checked .mat-checkbox-checkmark-path{stroke-dashoffset:0}.mat-checkbox-checked .mat-checkbox-mixedmark{transform:scaleX(1) rotate(-45deg)}.mat-checkbox-indeterminate .mat-checkbox-checkmark{opacity:0;transform:rotate(45deg)}.mat-checkbox-indeterminate .mat-checkbox-checkmark-path{stroke-dashoffset:0}.mat-checkbox-indeterminate .mat-checkbox-mixedmark{opacity:1;transform:scaleX(1) rotate(0deg)}.mat-checkbox-unchecked .mat-checkbox-background{background-color:transparent}.mat-checkbox-disabled{cursor:default}.cdk-high-contrast-active .mat-checkbox-disabled{opacity:.5}.mat-checkbox-anim-unchecked-checked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-in-background}.mat-checkbox-anim-unchecked-checked .mat-checkbox-checkmark-path{animation:180ms linear 0ms mat-checkbox-unchecked-checked-checkmark-path}.mat-checkbox-anim-unchecked-indeterminate .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-in-background}.mat-checkbox-anim-unchecked-indeterminate .mat-checkbox-mixedmark{animation:90ms linear 0ms mat-checkbox-unchecked-indeterminate-mixedmark}.mat-checkbox-anim-checked-unchecked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-out-background}.mat-checkbox-anim-checked-unchecked .mat-checkbox-checkmark-path{animation:90ms linear 0ms mat-checkbox-checked-unchecked-checkmark-path}.mat-checkbox-anim-checked-indeterminate .mat-checkbox-checkmark{animation:90ms linear 0ms mat-checkbox-checked-indeterminate-checkmark}.mat-checkbox-anim-checked-indeterminate .mat-checkbox-mixedmark{animation:90ms linear 0ms mat-checkbox-checked-indeterminate-mixedmark}.mat-checkbox-anim-indeterminate-checked .mat-checkbox-checkmark{animation:500ms linear 0ms mat-checkbox-indeterminate-checked-checkmark}.mat-checkbox-anim-indeterminate-checked .mat-checkbox-mixedmark{animation:500ms linear 0ms mat-checkbox-indeterminate-checked-mixedmark}.mat-checkbox-anim-indeterminate-unchecked .mat-checkbox-background{animation:180ms linear 0ms mat-checkbox-fade-out-background}.mat-checkbox-anim-indeterminate-unchecked .mat-checkbox-mixedmark{animation:300ms linear 0ms mat-checkbox-indeterminate-unchecked-mixedmark}.mat-checkbox-input{bottom:0;left:50%}.mat-checkbox .mat-checkbox-ripple{position:absolute;left:calc(50% - 20px);top:calc(50% - 20px);height:40px;width:40px;z-index:1;pointer-events:none}\n"]
+            }]
+    }], function () { return [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ElementRef"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ChangeDetectorRef"] }, { type: _angular_cdk_a11y__WEBPACK_IMPORTED_MODULE_0__["FocusMonitor"] }, { type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgZone"] }, { type: String, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Attribute"],
+                args: ['tabindex']
+            }] }, { type: String, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"]
+            }, {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"],
+                args: [_angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["ANIMATION_MODULE_TYPE"]]
+            }] }, { type: undefined, decorators: [{
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Optional"]
+            }, {
+                type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Inject"],
+                args: [MAT_CHECKBOX_DEFAULT_OPTIONS]
+            }] }]; }, { ariaLabel: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"],
+            args: ['aria-label']
+        }], ariaLabelledby: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"],
+            args: ['aria-labelledby']
+        }], id: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], labelPosition: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], name: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], change: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"]
+        }], indeterminateChange: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Output"]
+        }], required: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], checked: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], disabled: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], indeterminate: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], ariaDescribedby: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"],
+            args: ['aria-describedby']
+        }], value: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Input"]
+        }], _inputElement: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"],
+            args: ['input']
+        }], ripple: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["ViewChild"],
+            args: [_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRipple"]]
+        }] }); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+const MAT_CHECKBOX_REQUIRED_VALIDATOR = {
+    provide: _angular_forms__WEBPACK_IMPORTED_MODULE_3__["NG_VALIDATORS"],
+    useExisting: Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["forwardRef"])(() => MatCheckboxRequiredValidator),
+    multi: true
+};
+/**
+ * Validator for Material checkbox's required attribute in template-driven checkbox.
+ * Current CheckboxRequiredValidator only work with `input type=checkbox` and does not
+ * work with `mat-checkbox`.
+ */
+class MatCheckboxRequiredValidator extends _angular_forms__WEBPACK_IMPORTED_MODULE_3__["CheckboxRequiredValidator"] {
+}
+MatCheckboxRequiredValidator.ɵfac = function MatCheckboxRequiredValidator_Factory(t) { return ɵMatCheckboxRequiredValidator_BaseFactory(t || MatCheckboxRequiredValidator); };
+MatCheckboxRequiredValidator.ɵdir = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineDirective"]({ type: MatCheckboxRequiredValidator, selectors: [["mat-checkbox", "required", "", "formControlName", ""], ["mat-checkbox", "required", "", "formControl", ""], ["mat-checkbox", "required", "", "ngModel", ""]], features: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵProvidersFeature"]([MAT_CHECKBOX_REQUIRED_VALIDATOR]), _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵInheritDefinitionFeature"]] });
+const ɵMatCheckboxRequiredValidator_BaseFactory = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵgetInheritedFactory"](MatCheckboxRequiredValidator);
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](MatCheckboxRequiredValidator, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["Directive"],
+        args: [{
+                selector: `mat-checkbox[required][formControlName],
+             mat-checkbox[required][formControl], mat-checkbox[required][ngModel]`,
+                providers: [MAT_CHECKBOX_REQUIRED_VALIDATOR]
+            }]
+    }], null, null); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+/** This module is used by both original and MDC-based checkbox implementations. */
+class _MatCheckboxRequiredValidatorModule {
+}
+_MatCheckboxRequiredValidatorModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: _MatCheckboxRequiredValidatorModule });
+_MatCheckboxRequiredValidatorModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function _MatCheckboxRequiredValidatorModule_Factory(t) { return new (t || _MatCheckboxRequiredValidatorModule)(); } });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](_MatCheckboxRequiredValidatorModule, { declarations: [MatCheckboxRequiredValidator], exports: [MatCheckboxRequiredValidator] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](_MatCheckboxRequiredValidatorModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"],
+        args: [{
+                exports: [MatCheckboxRequiredValidator],
+                declarations: [MatCheckboxRequiredValidator]
+            }]
+    }], null, null); })();
+class MatCheckboxModule {
+}
+MatCheckboxModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineNgModule"]({ type: MatCheckboxModule });
+MatCheckboxModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineInjector"]({ factory: function MatCheckboxModule_Factory(t) { return new (t || MatCheckboxModule)(); }, imports: [[
+            _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_6__["ObserversModule"],
+            _MatCheckboxRequiredValidatorModule
+        ], _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _MatCheckboxRequiredValidatorModule] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵsetNgModuleScope"](MatCheckboxModule, { declarations: function () { return [MatCheckbox]; }, imports: function () { return [_angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_6__["ObserversModule"], _MatCheckboxRequiredValidatorModule]; }, exports: function () { return [MatCheckbox, _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _MatCheckboxRequiredValidatorModule]; } }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵsetClassMetadata"](MatCheckboxModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"],
+        args: [{
+                imports: [
+                    _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatRippleModule"], _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _angular_cdk_observers__WEBPACK_IMPORTED_MODULE_6__["ObserversModule"],
+                    _MatCheckboxRequiredValidatorModule
+                ],
+                exports: [MatCheckbox, _angular_material_core__WEBPACK_IMPORTED_MODULE_4__["MatCommonModule"], _MatCheckboxRequiredValidatorModule],
+                declarations: [MatCheckbox]
+            }]
+    }], null, null); })();
+
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+
+/**
+ * Generated bundle index. Do not edit.
+ */
+
+
+
+//# sourceMappingURL=checkbox.js.map
 
 /***/ }),
 

@@ -13,8 +13,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  @ViewChild('filterSidenav') filterSidenav: any;
+
   public template = 'Rocky album photocards';
-  public tabSelected = 0;
+  public activeTab = 0;
   public activeButton = 'home'
   showToDo = false;
   showNote = false;
@@ -24,7 +26,14 @@ export class AppComponent {
   photoSections: any[] = [];
   hasNoPhotoMap: Record<string, boolean> = {};
   tabLoadCount: Record<number, number> = {};
-
+  categories: string[] = [];
+  years: number[] = [];
+  selectedYear: number[] = [];
+  selectedCategory: string[] = [];
+  nonAlbumFiltered: any[] = [];
+  excludePhoto = false;
+  
+  //dont remove dont comment
   private astroAlbumPC = astroAlbumPC
   private astroNonAlbumPC = astroNonAlbumPC
   private arohaPC = arohaPC
@@ -83,6 +92,7 @@ export class AppComponent {
   ngOnInit() {
     this.loadNotice();
     this.loadPhotoSections();
+    this.loadDropdownOptions();
   }
 
   public loadNotice(){
@@ -106,14 +116,21 @@ export class AppComponent {
       });
     });
   }
+  public loadDropdownOptions(){
+    this.http.get<any>('assets/records/dropdown-options.json').subscribe(data => {
+      this.categories = data.categories;
+      this.years = data.years
+    });
+
+    this.nonAlbumFiltered = (this as any)["nonAlbumPC_"]
+  }
 
   loadPhotoGroup(data_: any[], dataProp: any) {
     data_.forEach((group, gi) => {
       for (let i = 0; i < group.total; i++) {
         const photo = {
-          caption: group.caption,
+          ...group,
           filename: group.nophoto ? undefined : `${gi}-${i}.jpg`,
-          album: group.album
         };
         (this as any)[dataProp].push(photo);
       }
@@ -127,7 +144,7 @@ export class AppComponent {
   }
 
   onTabChange(index: number) {
-    this.tabSelected = index;
+    this.activeTab = index;
     const section = this.photoSections.find(s => s.tabIndex === index);
     if (!section) return;
 
@@ -142,12 +159,18 @@ export class AppComponent {
         this.loadPhotoGroup((this as any)[sub.folderRecords], sub.dataProp)
       );
     }
+
+    if (index !== 0 && this.filterSidenav) {
+      this.filterSidenav.close();
+    }
   }
+
 
   public captureAndDownload() {
     const element = document.getElementById("rocky-photocards");
     const select = element?.querySelector('mat-form-field');
     const loader = document.getElementById("loader");
+    const toggle = document.getElementById("toggle");
 
     if (!element) {
       alert('Capture area not found!');
@@ -156,9 +179,12 @@ export class AppComponent {
 
     if (loader) loader.style.display = 'flex';
     if (select) (select as HTMLElement).style.display = 'none';
+    if (toggle) (toggle as HTMLElement).style.display = 'none';
 
-    html2canvas(element).then((canvas: any) => {
+    html2canvas(element, { scale: 3, useCORS: true, scrollY: 0 }).then((canvas: any) => {
+      // ✅ Restore hidden elements and layout
       if (select) (select as HTMLElement).style.display = '';
+      if (toggle) (toggle as HTMLElement).style.display = '';
 
       const imgData = canvas.toDataURL('image/png');
       const link = document.createElement('a');
@@ -175,6 +201,7 @@ export class AppComponent {
       if (loader) loader.style.display = 'none';
     });
   }
+
 
   onChangeDislay(selected: string[]) {
     this.selectedAstroPC = selected;
@@ -228,6 +255,24 @@ export class AppComponent {
   home() {
     this.customizeTemplate = false;
     this.activeButton = 'home';
+  }
+
+  getFilteredPhotos() {
+    const temp = (this as any)["nonAlbumPC_"]
+    this.nonAlbumFiltered = (this as any)["nonAlbumPC_"]
+    const filtered = temp.filter((photo: any) => {
+      const matchYear =
+        !this.selectedYear || this.selectedYear.length === 0 ||
+        this.selectedYear.includes(photo.year);
+
+      const matchCategory =
+        !this.selectedCategory || this.selectedCategory.length === 0 ||
+         this.selectedCategory.includes(photo.category);
+
+      return matchYear && matchCategory;
+    });
+
+    this.nonAlbumFiltered = [...filtered];
   }
 }
 
