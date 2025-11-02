@@ -5,7 +5,7 @@
   padding: 15px 20px;
   font-size: 25px;
   text-align: center;
-  background: url('/assets/background.png');
+  background: url('../assets/background.png');
   background-size: cover;
 }
 
@@ -270,7 +270,7 @@ mat-card {
     padding: 15px 20px;
     font-size: 25px;
     text-align: center;
-    background: url('/assets/background.png');
+    background: url('../assets/background.png');
     background-size: cover;
   }
 
