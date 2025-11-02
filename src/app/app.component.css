@@ -5,7 +5,8 @@
   padding: 15px 20px;
   font-size: 25px;
   text-align: center;
-  background:black;
+  background: url('/assets/background.png');
+  background-size: cover;
 }
 
 .logo{
@@ -120,9 +121,9 @@ mat-card {
 .sticky{
   position: fixed;
   z-index: 10000;
-  background-color: black;
+  background-color: white;
   display: flex;
-  color: white;
+  color: #808080ad;
   width: 100%;
   right: 0em;
   bottom: 0em;
@@ -151,14 +152,6 @@ mat-card {
   margin-top: 10px;
 }
 
-.template-notice{
-  border: solid 1px #e07418;
-  background: #f49a3654;
-  margin: 0px 30px;
-  padding: 25px;
-  border-radius: 5px;
-}
-
 .selected {
   opacity: 0.1;
   cursor: pointer;
@@ -167,12 +160,94 @@ mat-card {
 .customize-notice{ 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
+  img {
+    width:80%
+  }
 }
 
 .selected-btn {
   color: rgb(126 33 42) !important;             
 }
+
+.filter-non-album{
+    display: grid;
+}
+
+::ng-deep .mat-form-field {
+  --mat-form-field-container-height: 36px; /* reduce height */
+  --mat-form-field-container-padding-horizontal: 8px;
+  font-size: 13px !important;
+}
+
+::ng-deep .mat-select-value-text {
+  font-size: 13px !important;
+}
+
+::ng-deep .mat-select-arrow {
+  transform: scale(0.8); /* smaller dropdown arrow */
+}
+
+::ng-deep .mat-tab-labels {
+  min-height: 36px !important;
+ 
+}
+
+::ng-deep .mat-tab-label {
+  font-size: 13px !important;
+  padding: 4px 10px !important;
+  min-width: 70px !important;
+} 
+
+.filter-sidenav {
+  width: 280px;
+  background: #fff;
+  border-left: 1px solid #ddd;
+}
+
+.filter-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.5rem 1rem;
+}
+
+.tab-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 8px;
+
+  mat-tab-group {
+    flex: 1;
+    overflow: auto;
+  }
+
+  button[mat-icon-button] {
+    margin-left: 8px;
+  }
+}
+
+::ng-deep .mat-tab-header .mat-tab-label-container {
+  overflow-x: auto !important;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* hide scrollbar for Firefox */
+}
+
+::ng-deep .mat-tab-header .mat-tab-label-container::-webkit-scrollbar {
+  display: none; /* hide scrollbar for Chrome/Safari */
+}
+
+::ng-deep .mat-tab-header .mat-tab-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.filter-sidenav {
+  width: 250px;
+  padding: 12px;
+}
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -190,12 +265,13 @@ mat-card {
 
   .header{
     color: white;
-    height: 115px;
+    height: 135px;
     display: block;
     padding: 15px 20px;
     font-size: 25px;
     text-align: center;
-    background:black;
+    background: url('/assets/background.png');
+    background-size: cover;
   }
 
   mat-card {
@@ -232,6 +308,20 @@ mat-card {
 
   .note{
     width: 30em
+  }
+
+  .filter-non-album{
+    gap: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .customize-notice{ 
+    padding-top:3em;
+    img {
+      width:50%
+    }
   }
 
 }
