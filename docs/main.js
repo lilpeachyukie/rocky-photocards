@@ -842,20 +842,6 @@ class AppComponent {
         this.loadNotice();
         this.loadPhotoSections();
         this.loadDropdownOptions();
-        this.route.queryParams.subscribe(params => {
-            if (params['pc'] === "album")
-                this.onTabChange(0, true);
-            else if (params['pc'] === "non-album")
-                this.onTabChange(1, true);
-            else if (params['pc'] === "rockyst")
-                this.onTabChange(2, true);
-            else if (params['pc'] === "blank")
-                this.onTabChange(3, true);
-            else if (params['pc'] === "astro")
-                this.onTabChange(4, true);
-            else
-                this.onTabChange(0, true);
-        });
     }
     loadNotice() {
         this.http.get('assets/records/notice.json').subscribe(data => {
@@ -867,6 +853,13 @@ class AppComponent {
     loadPhotoSections() {
         this.http.get('assets/records/master.json').subscribe(config => {
             this.photoSections = config;
+            this.route.queryParams.subscribe(params => {
+                const pc = params['pc'];
+                if (pc) {
+                    this.activeTab = this.photoSections.findIndex(s => s.tabKey === pc);
+                    this.onTabChange(this.activeTab === -1 ? 0 : this.activeTab);
+                }
+            });
         });
     }
     loadDropdownOptions() {
@@ -889,7 +882,7 @@ class AppComponent {
             this.loadPhotoGroup(data, section.dataProp);
         });
     }
-    onTabChange(index, fromRoute = false) {
+    onTabChange(index) {
         this.activeTab = index;
         const section = this.photoSections.find(s => s.tabIndex === index);
         if (!section)
