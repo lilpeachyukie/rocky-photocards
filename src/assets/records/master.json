@@ -1,6 +1,7 @@
 [
   {
     "tabIndex": 0,
+    "tabKey": "album",
     "name": "Album",
     "folder": "album-pc",
     "dataProp": "albumPC_",
@@ -8,6 +9,7 @@
   },
   {
     "tabIndex": 1,
+    "tabKey": "non-album",
     "name": "Non‑Album",
     "folder": "non-album-pc",
     "dataProp": "nonAlbumPC_",
@@ -16,6 +18,7 @@
   },
   {
     "tabIndex": 2,
+    "tabKey": "rockyst",
     "name": "ROCKYST Event",
     "folder": "rockyst-pc",
     "dataProp": "rockystPC_",
@@ -24,6 +27,7 @@
   },
   {
     "tabIndex": 3,
+    "tabKey": "blank",
     "name": "BLANK Event",
     "folder": "blank-pc",
     "dataProp": "blankPC_",
@@ -33,6 +37,7 @@
   },
   {
     "tabIndex": 4,
+    "tabKey": "astro",
     "name": "ASTRO",
     "type": "astro",
     "subSections": [

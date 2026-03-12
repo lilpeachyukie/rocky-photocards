@@ -5,7 +5,8 @@ import { arohaPC, sgPC, astroadPC, aafPC, rorohaPC, magzPC, othersPC} from './..
 import { HostListener, ElementRef, ViewChild } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AppService } from './app.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -77,8 +78,10 @@ export class AppComponent {
 
   constructor(
     private http: HttpClient, 
-    private router: Router, 
-    private appService: AppService) {}
+    private cdr: ChangeDetectorRef,
+    private appService: AppService,
+    private route: ActivatedRoute,
+    private router: Router) {}
 
   @ViewChild('stickyDiv', { static: true }) stickyDiv!: ElementRef;
   @HostListener('document:click', ['$event'])
@@ -105,15 +108,13 @@ export class AppComponent {
   loadPhotoSections() {
     this.http.get<any[]>('assets/records/master.json').subscribe(config => {
       this.photoSections = config;
-      this.photoSections.forEach(section => {
-        if (section.type === 'rocky') {
-          this.hasNoPhotoMap[section.dataProp] = !!section.hasNoPhoto;
-        } else if (section.type === 'astro') {
-          section.subSections.forEach((sub: any)=> {
-            this.hasNoPhotoMap[sub.dataProp] = false;
-          });
+      this.route.queryParams.subscribe(params => {
+        const pc = params['pc'];
+        if(pc){
+          this.activeTab = this.photoSections.findIndex(s => s.tabKey === pc);
+          this.onTabChange(this.activeTab === -1 ? 0 : this.activeTab);
         }
-      });
+      }); 
     });
   }
   public loadDropdownOptions(){
@@ -144,25 +145,38 @@ export class AppComponent {
   }
 
   onTabChange(index: number) {
+
     this.activeTab = index;
+
     const section = this.photoSections.find(s => s.tabIndex === index);
     if (!section) return;
 
     this.template = section.name;
-    this.tabLoadCount[index] = (this.tabLoadCount[index] || 0) + 1;
-    if (this.tabLoadCount[index] > 1) return;
 
-    if (section.type === 'rocky') {
-      this.loadCaption(section);
-    } else if (section.type === 'astro') {
-      section.subSections.forEach((sub: any) =>
-        this.loadPhotoGroup((this as any)[sub.folderRecords], sub.dataProp)
-      );
+    // ✅ Load photos only once
+    if (!this.tabLoadCount[index]) {
+      this.tabLoadCount[index] = 1;
+
+      if (section.type === 'rocky') {
+        this.loadCaption(section);
+      } else if (section.type === 'astro') {
+        section.subSections.forEach((sub: any) =>
+          this.loadPhotoGroup(
+            (this as any)[sub.folderRecords],
+            sub.dataProp
+          )
+        );
+      }
     }
 
     if (index !== 0 && this.filterSidenav) {
       this.filterSidenav.close();
     }
+
+    this.router.navigate([], {
+      queryParams: { pc: section.tabKey },
+      queryParamsHandling: 'merge',
+    });
   }
 
 
@@ -226,6 +240,23 @@ export class AppComponent {
   getPhotoArray(prop: string) {
     return (this as any)[prop] || [];
   }
+
+  onImageError(event: Event, photo: any) {
+    // Mark this photo as missing
+    photo.missing = true;
+
+    const img = event.target as HTMLImageElement;
+    
+    if (this.excludePhoto) {
+      // Hide broken image
+      img.style.display = 'none';
+    } else {
+      // Show fallback image
+      img.src = 'assets/images/nophoto.png';
+    }
+
+    this.cdr.detectChanges();
+}
 
   public want: { caption: string, path: string, album: string }[] = [];
   public customizeTemplate =  false;

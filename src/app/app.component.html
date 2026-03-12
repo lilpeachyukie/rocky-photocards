@@ -61,17 +61,17 @@
                 *ngFor="let photo of sec.tabIndex === 1 ? nonAlbumFiltered : getPhotoArray(sec.dataProp)"
                 (click)="addWant(photo.caption, photo.filename, sec.folder, sec.album)"
                 [ngClass]="{ 'selected': getSelected(sec.folder, photo.filename)}"
-                [style.display]="photo.nophoto && excludePhoto ? 'none' : 'block'"
+                [style.display]="photo.missing && excludePhoto ? 'none' : 'block'"
                 >
                 <mat-card-content class="d-grid">
                   <img
-                    [src]="hasNoPhotoMap[sec.dataProp] && !photo.filename
-                      ? 'assets/images/nophoto.png'
-                      : 'assets/images/' + sec.folder + '/' + photo.filename"
-                    alt="{{ photo.caption }}">
+                    [src]="'assets/images/' + sec.folder + '/' + photo.filename"
+                    (error)="onImageError($event, photo)"
+                  > 
                   <div class="title-photo">{{ photo.album }}{{ photo.caption }}</div>
                 </mat-card-content>
               </mat-card>
+              
             </ng-container>
 
             <ng-container *ngIf="sec.type === 'astro'">
